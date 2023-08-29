@@ -1,0 +1,1493 @@
+<!--更多资源：https://gitee.com/iGaoWei/big-data-view -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head 通常包含了页面的元信息和引入的外部资源 -->
+<head>
+    <!-- 设置文档的字符编码为UTF-8 -->
+    <meta charset="UTF-8">
+        <!-- 设置视口以适应设备宽度，初始缩放比例为1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 每隔60秒刷新页面并跳转到指定URL -->
+    <!-- <meta http-equiv="refresh" content="60;url='https://gitee.com/iGaoWei/big-data-view'"> -->
+        <!-- 指定使用最高版本的IE进行渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- 设置页面标题 -->
+    <title>重庆市专利数据可视化监控平台</title>
+        <!-- 引入页面样式表 本地文件 相对路径css文件夹下的样式文件-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+    <!-- body包含了页面的实际内容结构。它描述了页面的各个部分，包括标题、数据展示、列表等 -->
+<body>
+    <!-- 页面主要内容开始 -->
+<div id="particles-js" class="main">
+    <!-- 主要内容容器开始 -->
+    <div class="main_con">
+        <!-- 主要内容的上半部分开始 -->
+        <div class="main_top">
+           <!-- 主要内容的左上部分开始 -->
+            <div class="main_top_left">
+                <!-- 左上部分的上半部分开始 -->
+                <div class="main_top_left_top">
+                     <!-- 公开数据展示的图标 -->
+                    <img src="./images/main_top_left.png"/>
+                    <!-- 公开数据展示的标题 -->
+                    <div class="main_top_left_top_title">专利数据展示</div>
+                    <!-- 公开数据展示的内容 -->
+                    <div class="main_top_left_top_con">
+                        <!-- 数据展示列表项 -->
+                        <div class="main_top_left_top_con_list">
+                            <span class="main_top_left_c_l_n main_top_left_c_l_n1">0</span>
+                            <p>发明专利</p>
+                        </div>
+                        <div class="main_top_left_top_con_list">
+                            <span class="main_top_left_c_l_n main_top_left_c_l_n2">0</span>
+                            <p>实用新型</p>
+                        </div>
+                        <div class="main_top_left_top_con_list">
+                            <span class="main_top_left_c_l_n main_top_left_c_l_n3">0</span>
+                            <p>外观设计</p>
+                        </div>
+                        <!-- 左上部分的底部内容开始 -->
+                        <div class="main_top_left_top_con_left">
+                            <!-- 左侧底部数据展示列表项 -->
+                            <div class="main_top_left_t_c_l_left">
+                                <!-- 数据展示的数字 -->
+                                <span class="main_top_left_c_l_n main_top_left_c_l_n4">0</span>
+                                <p>有效专利</p>
+                            </div>
+                            <!-- 右侧底部数据展示列表项 -->
+                            <div class="main_top_left_t_c_l_right">
+                                <!-- 数据展示的数字 -->
+                                <span class="main_top_left_c_l_n main_top_left_c_l_n5">0</span>
+                                <p>失效专利</p>
+                            </div>
+                        </div>
+                         <!-- 右侧底部数据展示列表项 -->
+                        <div class="main_top_left_top_con_right main_top_left_top_con_right2">
+                             <!-- 左侧底部数据展示列表项 -->
+                            <div class="main_top_left_t_c_r_left">
+                                  <!-- 数据展示的数字 -->
+                                <span class="main_top_left_c_l_n main_top_left_c_l_n6">0</span>
+                                <p>审中专利</p>
+                            </div>
+                            <div class="main_top_left_t_c_r_right">
+                                <span class="main_top_left_c_l_n">520</span>
+                                <p>权利转移</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 左上部分的上半部分结束 -->
+                <!-- 左上部分的下半部分开始 -->
+                <div class="main_top_left_top main_top_left_bottom">
+                    <!-- 图标 -->
+                    <img src="./images/main_top_left.png"/>
+                    <!-- 标题 -->
+                    <div class="main_top_left_top_title">专利申请区域排名</div>
+                    <!-- 数据展示容器 -->
+                    <div id="baseId" class="main_top_left_top_con"></div>
+                </div>
+                   <!-- 左上部分的下半部分结束 -->
+            </div>
+            <!-- 主要内容的左上部分结束 -->
+            <!-- 主要内容的中间部分开始 -->
+            <div class="main_top_middle">
+                <!-- 中间部分的上方标题 -->
+                <div class="main_top_middle_top_title">
+                    <img class="title_bg" src="./images/title_bg.png">
+                    重庆中之信专利数据可视化监控平台
+                    <!-- 链接 -->
+                    <a class="title_web" href="http://www.buerip.com/" target="blank">不二官网</a>
+                    <a class="title_admin" href="https://www.cnipa.gov.cn/" target="blank">国知局</a>
+                </div>
+                <!-- 中间部分的案件公开数量标题 -->
+                <div class="main_top_middle_num_title">专利申请总量</div>
+                 <!-- 案件公开数量展示 -->
+                <div class="main_top_middle_num">
+                    <!-- 案件公开数量列表项 -->
+<!--                    <div class="main_top_middle_num_list">-->
+<!--                        <img src="./images/center_num.png">-->
+<!--                        <p class="main_top_middle_num_list6">0</p>-->
+<!--                    </div>-->
+                    <div class="main_top_middle_num_list">
+                        <img src="./images/center_num.png">
+                        <p class="main_top_middle_num_list5">0</p>
+                    </div>
+                    <div class="main_top_middle_num_list">
+                        <img src="./images/center_num.png">
+                        <p class="main_top_middle_num_list4">0</p>
+                    </div>
+                    <div class="main_top_middle_num_list">
+                        <img src="./images/center_num.png">
+                        <p class="main_top_middle_num_list3">0</p>
+                    </div>
+                    <div class="main_top_middle_num_list">
+                        <img src="./images/center_num.png">
+                        <p class="main_top_middle_num_list2">0</p>
+                    </div>
+                    <div class="main_top_middle_num_list">
+                        <img src="./images/center_num.png">
+                        <p class="main_top_middle_num_list1">0</p>
+                    </div>
+                </div>
+                <!-- 中间部分的底部内容开始 -->
+                <div class="main_top_middle_bottom">
+                    <!-- 左侧饼状图 -->
+                    <div class="main_top_middle_bottom_echarts">
+                        <img src="./images/main_top_bottom.png">
+                        <div class="main_top_echarts_con">
+                            <div class="main_top_echarts_con_title">专利类型构成</div>
+                            <div id="threeTasksId" class="main_top_echarts_pie"></div>
+                        </div>
+                    </div>
+                    <!-- 右侧饼状图 -->
+                    <div class="main_top_middle_bottom_echarts main_top_middle_bottom_echarts_right">
+                        <img src="./images/main_top_bottom.png">
+                        <div class="main_top_echarts_con">
+                            <div class="main_top_echarts_con_title">专利法律状态构成</div>
+                            <div id="publicityId" class="main_top_echarts_pie"></div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- 中间部分的底部内容结束 -->
+            </div>
+             <!-- 主要内容的中间部分结束 -->
+
+            <!-- 主要内容的右上部分开始 -->
+            <div class="main_top_left main_top_right">
+                <!-- 右上部分的上半部分开始 -->
+                <div class="main_top_left_top">
+                    <!-- 图标 -->
+                    <img src="./images/main_top_left.png"/>
+                     <!-- 标题 -->
+                    <div class="main_top_left_top_title">近期专利数据展示</div>
+                    <!-- 数据展示内容 -->
+                    <div class="main_top_left_top_con">
+                         <!-- 数据展示列表项 -->
+                        <div class="main_top_left_top_con_left">
+                             <!-- 数据展示的数字 -->
+                            <span class="daysData">0</span>
+                            <p>本年度累计申请量</p>
+                        </div>
+                        <div class="main_top_left_top_con_right">
+                            <span class="weekData">0</span>
+                            <p>本年度累计授权量</p>
+                        </div>
+                        <div class="main_top_left_top_con_list">
+                            <span class="monthData">0</span>
+                            <p>与上年申请差</p>
+                        </div>
+                        <div class="main_top_left_top_con_list">
+                            <span class="someThing">0</span>
+                            <p>本年发明申请</p>
+                        </div>
+                        <div class="main_top_left_top_con_list">
+                            <span class="policyData">0</span>
+                            <p>本年授权发明</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右上部分的上半部分结束 -->
+
+                <!-- 右上部分的下半部分开始 -->
+                <div class="main_top_left_top main_top_left_bottom">
+                    <!-- 图标 -->
+                    <img src="./images/main_top_left.png"/>
+                    <!-- 标题 -->
+                    <div class="main_top_left_top_title">战略新兴产业构成</div>
+                    <!-- 数据展示容器 -->
+                    <div id="questionId" class="main_top_left_top_con">
+                    </div>
+
+                </div>
+                <!-- 右上部分的下半部分结束 -->
+            </div>
+           <!-- 主要内容的右上部分结束 -->
+        </div>
+        <!-- 主要内容的上半部分结束 -->
+
+        <!-- 主要内容的中间部分 -->
+        <div class="main_middle">
+            <!-- 中间部分的列表项 -->
+            <div class="main_middle_list">
+                <!-- 图标 -->
+                <img src="./images/main_middle.png">
+                <!-- 标题 -->
+                <div class="main_list_title main_list_title1">XXX镇</div>
+                <!-- 数字 -->
+                <span class="main_list_title_num main_list_title_num1">0</span>
+            </div>
+            <div class="main_middle_list">
+                <img src="./images/main_middle.png">
+                <div class="main_list_title main_list_title2">XX镇</div>
+                <span class="main_list_title_num main_list_title_num2">0</span>
+            </div>
+            <div class="main_middle_list">
+                <img src="./images/main_middle.png">
+                <div class="main_list_title main_list_title3">XXXX</div>
+                <span class="main_list_title_num main_list_title_num3">0</span>
+            </div>
+            <div class="main_middle_list">
+                <img src="./images/main_middle.png">
+                <div class="main_list_title main_list_title4">XXXX</div>
+                <span class="main_list_title_num main_list_title_num4">0</span>
+            </div>
+            <div class="main_middle_list">
+                <img src="./images/main_middle.png">
+                <div class="main_list_title main_list_title5">XXXX</div>
+                <span class="main_list_title_num main_list_title_num5">0</span>
+            </div>
+        </div>
+        <!-- 主要内容的中间部分结束 -->
+
+        <!-- 主要内容的底部部分开始 -->
+        <div class="main_bottom">
+            <!-- 底部的上半部分开始 -->
+            <div class="main_bottom_top">
+                <!-- 底部的左侧列表项 -->
+                <div class="main_bottom_top_list">
+                    <!-- 图标 -->
+                    <img src="./images/main_bottopm_top1.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_t_l_title">公众号资讯</div>
+                    <!-- 内容 -->
+                    <div class="main_bottom_t_l_con" style="top: -15px">
+                        <!-- 列表内容 -->
+                        <div class="main_bottom_t_l_main">
+                            <ul>
+                                <!-- 列表项 -->
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title1">
+                                            <a href="https://mp.weixin.qq.com/s/HHPiAipWwCdIL78Ex5yjfQ" target="_blank" style="color: white;">江津区知识产权工作推进会暨主题沙龙活动圆满落幕</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/03/17</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title1">
+                                            <a href="https://mp.weixin.qq.com/s/rc2sN2Y7zaisdb1Nb-GZOQ" target="_blank" style="color: white;">【三月记】凝聚IP智慧 助力长江经济带高质量发展</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/04/04</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title1">
+                                            <a href="https://mp.weixin.qq.com/s/n4wgw2s9epm8Me-We7qX3w" target="_blank" style="color: white;">【四月记】凝聚IP智慧 助力长江经济带高质量发展</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/05/12</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title1">
+                                            <a href="https://mp.weixin.qq.com/s/mvnJwBiO7WpJAzt_86K0Yw" target="_blank" style="color: white;">【五月记】凝聚IP智慧 助力长江经济带高质量发展</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/06/07</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title1">
+                                            <a href="https://mp.weixin.qq.com/s/vfSNADDdJ1NtX6zmRdNAew" target="_blank" style="color: white;">【六月记】凝聚IP智慧 助力长江经济带高质量发展</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/07/04</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title2">
+                                            <a href="https://mp.weixin.qq.com/s/rTbeYrcXqdwdPMTDa6xF-w" target="_blank" style="color: white;">想解决技术难题吗？</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time2">2023/07/12</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title3">
+                                            <a href="https://mp.weixin.qq.com/s/ynJyIiB28QGx1Vu4SKAJWg" target="_blank" style="color: white;">乘风破浪，扬帆起航——热烈庆祝十堰分所盛大开业</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time3">2023/07/13</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_t_list_title4">
+                                            <a href="https://mp.weixin.qq.com/s/Wjk0Y5FWFeA3Fw98Odtfwg" target="_blank" style="color: white;">【七月记】凝聚IP智慧助力长江经济带高质量发展</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_t_list_time4">2023/08/03</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 中间的列表项 -->
+                <div class="main_bottom_top_list">
+                    <!-- 图标 -->
+                    <img src="./images/main_bottopm_top2.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_t_l_title">申请人类型构成</div>
+                    <!-- 饼状图容器 -->
+                    <div id="departmentId" class="main_bottom_t_l_chart"></div>
+                </div>
+                <!-- 右侧的列表项 -->
+                <div class="main_bottom_top_list">
+                    <!-- 图标 -->
+                    <img src="./images/main_bottopm_top1.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_t_l_title">功能工具</div>
+                    <!-- 内容 -->
+                    <div class="main_bottom_t_l_con" style="top: -15px">
+                         <!-- 列表内容 -->
+                        <div class="main_bottom_t_l_main2">
+                            <ul>
+                                <!-- 列表项 -->
+                                <li>
+
+                                    <div class="main_bottom_t_l_main_list">
+                                        <!-- 标题 -->
+                                        <div class="main_bottom_t_list_title main_bottom_polity_title1">
+                                            <a href="https://renyidake-streamlit-streamlit-i18h6p.streamlit.app/" target="_blank" style="color: white;">数据筛选</a>
+                                        </div>
+                                        <!-- 时间 -->
+                                        <div class="main_bottom_t_list_time main_bottom_polity_time1">2023/05/18</div>
+                                    </div>
+
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_polity_title2">
+                                            <a href="https://renyidake-streamlit-streamlitech-w3yoz9.streamlit.app/" target="_blank" style="color: white;">数据看板</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_polity_time1">2023/05/20</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_polity_title3">
+                                            <a href="https://renyidake-streamlit-streamlit-nl7xmx.streamlit.app/" target="_blank" style="color: white;">数据透视</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_polity_time1">2023/07/20</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main_bottom_t_l_main_list">
+                                        <div class="main_bottom_t_list_title main_bottom_polity_title4">
+                                            <a href="https://renyidake-streamlit-streamlit-ckr74a.streamlit.app/" target="_blank" style="color: white;">报告模版</a>
+                                        </div>
+                                        <div class="main_bottom_t_list_time main_bottom_polity_time1">2023/08/23</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 底部的上半部分结束 -->
+
+            <!-- 底部的下半部分开始 -->
+            <div class="main_bottom_bottom">
+                <!-- 左侧内容 -->
+                <div class="main_bottom_b_left">
+                    <!-- 图标 -->
+                    <img src="./images/main_bottom_bottom.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_b_title">专利技术分布</div>
+                    <!-- 内容 -->
+                    <div id="coverageId" class="main_bottom_b_con"></div>
+                </div>
+                <!-- 中间左侧内容 -->
+                <div class="main_bottom_b_middle1">
+                    <!-- 图标 -->
+                    <img src="./images/main_bootm_middle.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_b_title">专利申请人排名</div>
+                    <!-- 内容 -->
+                    <div id="contentId" class="main_bottom_b_con main_bottom_b_con2"></div>
+                </div>
+                <!-- 中间右侧内容 -->
+                <div class="main_bottom_b_middle2">
+                    <!-- 图标 -->
+                    <img src="./images/main_bootm_middle.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_b_title">专利申请趋势</div>
+                    <!-- 内容 -->
+                    <div id="publicNumId" class="main_bottom_b_con main_bottom_b_con2"></div>
+                </div>
+                 <!-- 右侧内容 -->
+                <div class="main_bottom_b_right">
+                    <!-- 图标 -->
+                    <img src="./images/main_bottom_bottom.png">
+                    <!-- 标题 -->
+                    <div class="main_bottom_b_title">应用领域排名</div>
+                    <!-- 内容 -->
+                    <div id="yearsNumId" class="main_bottom_b_con"></div>
+                </div>
+            </div>
+            <!-- 底部的下半部分结束 -->
+        </div>
+        <!-- 主要内容的底部部分结束 -->
+    </div>
+    <!-- 主要内容容器结束 -->
+</div>
+<!-- 页面主要内容结束 -->
+</body>
+
+</html>
+
+
+    <!-- 引入 jQuery JavaScript 库（版本1.10.2） -->
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <!-- 引入 ECharts JavaScript 库（版本4.2.1） -->
+<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+    <!-- 引入名为 dataScoll.js 的本地 JavaScript 文件，可能与数据滚动相关 -->
+<script type="text/javascript" src="js/dataScoll.js"></script>
+ <!-- 引入名为 digitalScroll.js 的本地 JavaScript 文件，可能与数字滚动效果相关 -->
+<script type="text/javascript" src="js/digitalScroll.js"></script>
+    <!-- 引入名为 jcarousellite.js 的本地 JavaScript 文件，可能与轮播功能相关 -->
+<script type="text/javascript" src="js/jcarousellite.js"></script>
+  <!-- 引入名为 particles.min.js 的本地 JavaScript 文件，可能用于创建粒子效果 -->
+<script type="text/javascript" src="js/particles.min.js"></script>
+    <!-- 引入名为 app.js 的本地 JavaScript 文件，可能是整个应用的主要脚本 -->
+<script type="text/javascript" src="js/app.js"></script>
+
+<script>
+    $(function() {
+        // jQuery 文档就绪时执行的函数
+        function apiFn() {
+            this.hostname = "" // 初始化一个空的 hostname 属性
+        }
+        // 在 apiFn 的原型上定义各种函数
+        apiFn.prototype = {
+            Init:function() {
+            // 初始化函数，将会在页面加载时调用一系列功能
+                this.findCount()  // 调用 findCount 函数
+                this.otherDataFn() // 调用 otherDataFn 函数
+                this.baseInfo() // 调用 baseInfo 函数
+                this.questionFn()  // 调用 questionFn 函数
+                this.publicityFn()
+                this.threeTasksFn()
+                this.departmentFn()
+                this.guideFn()
+                this.policyFn()
+                this.coverageFn()
+                this.yearsNumFn()
+                this.contentFn()
+                this.publicNumFn()
+                // 每隔 6000 毫秒（6 秒）执行 numInit 函数
+                setInterval(function() {
+                    numInit()
+                },6000)
+            },
+            findCount:function() {
+
+            },
+            // 其他数据展示
+            // 给特定元素添加类名，设置其文本内容
+            otherDataFn:function() {
+                $(".daysData").addClass("counter-value").text("829")
+                $(".weekData").addClass("counter-value").text("558")
+                $(".monthData").addClass("counter-value").text("-3730")
+                $(".someThing").addClass("counter-value").text("271")
+                $(".policyData").addClass("counter-value").text("3")
+            },
+            // 基础信息
+            baseInfo:function() {
+
+
+                var baseChart = echarts.init(document.getElementById('baseId')); // 使用 echarts 初始化图表
+                var charts = [ // 一组图表数据
+                    {name: "重庆", num: 13240},
+                    {name: "湖北", num: 9158},
+                    {name: "浙江", num: 7656},
+                    {name: "四川", num: 2833},
+                    {name: "上海", num: 600},
+                    {name: "北京", num: 560},
+                ]
+                var color = ['rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249'] // 颜色数组
+
+                let lineY = [] // 用于存储图表的数据项
+                for (var i = 0; i < charts.length; i++) {
+                var x = i
+                if (x > color.length - 1) {
+                    x = color.length - 1
+                }
+                var data = {
+                    name: charts[i].name,
+                    color: color[x] + ')', // 使用颜色数组设置颜色
+                    value: charts[i].num,
+                    // 设置图表项样式
+                    itemStyle: {
+                    normal: {
+                        show: true,
+                        // 使用渐变颜色
+                        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                        offset: 0,
+                        color: color[x] + ', 0.3)'
+                        }, {
+                        offset: 1,
+                        color: color[x] + ', 1)'
+                        }], false),
+                        barBorderRadius: 10
+                    },
+                    emphasis: {
+                        shadowBlur: 15,
+                        shadowColor: 'rgba(0, 0, 0, 0.1)'
+                    }
+                    }
+                }
+                lineY.push(data) // 将数据项添加到数组
+                }
+                var option= {
+                title: {
+                    show: false
+                },
+                grid: {
+                    // borderWidth: 1,
+                    top: '10%',
+                    left: '30%',
+                    right: '20%',
+                    bottom: '3%'
+                },
+                color: color,
+                yAxis: [{
+                    type: 'category',
+                    inverse: true,
+                    axisTick: {
+                    show: false
+                    },
+                    axisLine: {
+                    show: false
+                    },
+                    axisLabel: {
+                    show: false,
+                    inside: false
+                    },
+                    data: charts.name
+                }, {
+                    type: 'category',
+                    inverse: true,
+                    axisLine: {
+                    show: false
+                    },
+                    axisTick: {
+                    show: false
+                    },
+                    axisLabel: {
+                    show: true,
+                    inside: false,
+                    textStyle: {
+                        color: '#38E1E1',
+                        fontSize: '8',
+                    },
+                    // 根据索引返回对应的数字
+                    formatter: function (val,index) {
+                        return `${charts[index].num}`
+                    }
+                    },
+                    splitArea: {
+                    show: false
+                    },
+                    splitLine: {
+                    show: false
+                    },
+                    data: charts
+                }],
+                // X 轴的设置
+                xAxis: {
+                    // type: 'value',
+                    axisTick: {
+                    show: false
+                    },
+                    axisLine: {
+                    show: false
+                    },
+                    splitLine: {
+                    show: false
+                    },
+                    axisLabel: {
+                    show: false
+                    }
+                },
+                series: [{
+                    name: '',
+                    type: 'bar',
+                    zlevel: 2,
+                    barWidth: '5px',
+                    data: lineY,
+                    animationDuration: 1500,
+                    label: {
+                    normal: {
+                        color: 'white',
+                        show: true,
+                        position: [-65, -2],
+                        textStyle: {
+                        fontSize: 8
+                        },
+                        // 设置标签内容为数据项的名称
+                        formatter: function (a, b) {
+                            return a.name
+                        }
+                    }
+                    }
+                }],
+                animationEasing: 'cubicOut'
+                }
+                baseChart.setOption(option)// 设置图表的选项
+                // 每隔 40 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    baseChart.clear()
+                    baseChart.setOption(option)
+                },40000)
+            },
+            //  战兴
+            questionFn:function() {
+                var numArr = [  // 一组问题反馈数据
+                    {name: '新一代信息技术', value: 1267},
+                    {name: '高端装备制造', value: 2539},
+                    {name: '新材料', value: 1642},
+                    {name: '新能源汽车', value: 357},
+                    {name: '新能源', value: 1313},
+                    {name: '节能环保', value: 2886},
+                    {name: '数字创意', value: 179},
+                    {name: '相关服务业', value: 573},
+                    {name: '生物', value: 1652},
+                ]
+                // for(var i = 0; i < data.list.length; i++) {
+                //     numArr.push({name: data.list[i].name,value: data.list[i].num})
+                // }
+                var datas = numArr // 使用数据
+                var questionChart = echarts.init(document.getElementById('questionId')); // 使用 echarts 初始化图表 空间id
+                var option = { // 图表的配置选项
+                    title: {
+                        left: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    color:["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+ "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+ "#0780cf", "#765005"],
+                    legend: {
+                        itemWidth: 11,// 标志图形的长度
+                        itemHeight: 11,// 标志图形的宽度
+                        orient: 'vertical',
+                        // left: 'right',
+                        top: '15%',
+                        x: '50%',
+                        data: datas,
+                        textStyle: { //图例文字的样式
+                            color: '#fff',
+                            fontSize: 8
+                        },
+                    },
+                    series: [
+                        {
+                            name: '战略新兴产业',
+                            type: 'pie',
+                            radius: '75%',
+                            center: ['20%', '50%'],
+                            animationDuration: 2500,
+                            data: datas,
+                            label: {
+                                normal: {
+                                    position: 'inner',
+                                    show : false
+                                }
+                            }
+                        }
+                    ]
+                };
+                questionChart.setOption(option) // 设置图表的选项
+                 // 每隔 8 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    questionChart.clear()
+                    questionChart.setOption(option)
+                },8000)
+            },
+            // 法律状态
+            publicityFn:function() {
+                var dataArr = [ // 法律状态数据
+                    {name: '有效专利', value: 19908},
+                    {name: '失效专利', value: 12548},
+                    {name: '审中专利', value: 2643},
+
+                ]
+                for(var i = 1; i <= dataArr.length; i++) {
+                    $(".main_top_left_c_l_n"+(i+3)).addClass("counter-value").text(dataArr[i-1].value)
+                }
+                // for(var i = 0; i < res.list.length; i++) {
+                //     dataArr.push({name: res.list[i].name, value: res.list[i].num})
+                // }
+
+                var publicitChart = echarts.init(document.getElementById('publicityId')); //空间id
+                var data = dataArr
+                var option = {
+                // 图表的配置选项
+                    color: ["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+ "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+ "#0780cf", "#765005"],
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    legend: {
+                        itemWidth: 12,// 标志图形的长度
+                        itemHeight: 12,// 标志图形的宽度
+                        orient: 'vertical',
+                        // left: 'right',
+                        top: '5%',
+                        bottom: '50%',
+                        x: '45%',
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 8,
+
+                        },
+                        data: data,
+                    },
+                    series: [
+                        // 主要展示层的
+                        {
+                            radius: ['70%', '90%'],
+                            center: ['25%', '50%'],
+                            type: 'pie',
+                            label: {
+                                normal: {
+                                    position: 'inner',
+                                    show : false
+                                }
+                            },
+                            name: "法律状态",
+                            data: data,
+                        },
+                        // 边框的设置
+                        {
+                            radius: ['50%', '55%'],
+                            center: ['25%', '50%'],
+                            type: 'pie',
+                            label: {
+                                normal: {
+                                    show: false
+                                },
+                                emphasis: {
+                                    show: false
+                                }
+                            },
+                            labelLine: {
+                                normal: {
+                                    show: false
+                                },
+                                emphasis: {
+                                    show: false
+                                }
+                            },
+                            animation: false,
+                            tooltip: {
+                                show: false
+                            },
+                            data: [{
+                                value: 1,
+                                itemStyle: {
+                                    color: "rgba(250,250,250,0.3)",
+                                },
+                            }],
+                        }
+                    ]
+                };
+                publicitChart.setOption(option)// 设置图表的选项
+                 // 每隔 6 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    publicitChart.clear()
+                    publicitChart.setOption(option)
+                },6000)
+            },
+            // 三务公开数量
+            threeTasksFn:function() {
+                let names = "35099";
+                //main_top_left_c_l_n1  main_top_left_top_con_list
+                if(6 - names.length > 0) {
+                    for(g = 0; g < 6 - names.length; g++) {
+                        $(".main_top_middle_num_list"+(6 - g)).text('0')
+                    }
+                }
+                for(var j = 0; j < names.length; j++) {
+                    $(".main_top_middle_num_list"+(names.length - j)).text(names.substr(j,1))
+                }
+                var dataArr = [ // 一组三务公开数量数据
+                    {name: '发明专利', value: 6402},
+                    {name: '实用新型', value: 26055},
+                    {name: '外观设计', value: 2642},
+                ]
+                for(var i = 1; i <= dataArr.length; i++) {
+                    $(".main_top_left_c_l_n"+i).addClass("counter-value").text(dataArr[i-1].value)
+                }
+                var threeTasksChart = echarts.init(document.getElementById('threeTasksId')); //空间id
+                var data = dataArr
+                var option = { // 图表的配置选项
+                    color: ["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+ "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+ "#0780cf", "#765005"],
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        itemWidth: 15,// 标志图形的长度
+                        itemHeight: 15,// 标志图形的宽度
+                        orient: 'vertical',
+                        // left: 'right',
+                        top: '10%',
+                        bottom: '50%',
+                        x: '50%',
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 8,
+
+                        },
+                        data: data
+                    },
+                    series :
+                        {
+                            name:'专利类型',
+                            type:'pie',
+                            animationDuration: 1500,
+                            radius: ['70%', '90%'],
+                            center: ['25%', '50%'],
+                            roseType : 'radius',
+                            label: {
+                                normal: {
+                                    position: 'inner',
+                                    show : false
+                                }
+                            },
+                            data:data
+                        }
+                };
+                threeTasksChart.setOption(option) // 设置图表的选项
+                // 每隔 4 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    threeTasksChart.clear()
+                    threeTasksChart.setOption(option)
+                },4000)
+            },
+            // 各事务所专利
+            departmentFn:function() {
+                var dataArr = [ // 各事务所专利数据
+                    {name: '公司', value: 32151},
+                    {name: '个人', value: 1812},
+                    {name: '院校/研究所', value: 1160},
+                    {name: '医院', value: 264},
+                    {name: '政府机构', value: 85},
+                    {name: '其他', value: 70},
+                ]
+                    // 中间滚动数据展示
+                    for(var j = 0; j < dataArr.length; j++) {
+                        $(".main_list_title_num"+(j+1)).addClass("counter-value").text(dataArr[j].value)
+                        $(".main_list_title"+(j+1)).text(dataArr[j].name)
+                    }
+                var departmentChart = echarts.init(document.getElementById('departmentId'));
+                var data = dataArr
+                var option = { // 图表的配置选项
+                    color: ["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+ "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+ "#0780cf", "#765005"],
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        itemWidth: 15,// 标志图形的长度
+                        itemHeight: 15,// 标志图形的宽度
+                        orient: 'vertical',
+                        // left: 'right',
+                        top: '30%',
+                        bottom: '50%',
+                        x: '5%',
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 8,
+
+                        },
+                        data: data,
+                    },
+                    series: [
+                        {
+                            name: '申请人类型',
+                            type: 'pie',
+                            radius: ['50%', '70%'],
+                            center: ['78%', '52%'],
+                            labelLine: {
+                                normal: {
+                                    length: 12,
+                                    lineStyle: {
+                                        type: 'solid',
+                                        color: '#0EFCFF'
+                                    }
+                                }
+
+                            },
+                            label: {
+                                normal: {
+                                    formatter: (params)=>{
+                                        return params.name
+                                    },
+                                    borderWidth: 0,
+                                    borderRadius: 4,
+                                    padding: [0,0],
+                                    height: 20,
+                                    fontSize: 8,
+                                    align: 'center',
+                                    color: '#0EFCFF',
+                                }
+                            },
+                            data: data
+                        },
+                        {
+                            color: '#0EFCFF',
+                            type: 'pie',
+                            radius: ['55', '56'],
+                            center: ['78%', '52%'],
+                            data: [100],
+                            label: {
+                                show: false
+                            }
+                        },
+                        {
+                            type: 'pie',
+                            radius: ['25', '26'],
+                            center: ['78%', '52%'],
+                            data: [100],
+                            label: {
+                                show: false
+                            }
+                        }
+                    ]
+                };
+                departmentChart.setOption(option) // 设置图表的选项
+                // 每隔 12 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    departmentChart.clear()
+                    departmentChart.setOption(option)
+                },12000)
+            },
+            // 专利资讯
+            guideFn:function() {
+                $(".main_bottom_t_l_main").jCarouselLite({
+                    vertical: true,
+                    hoverPause:true,
+                    visible: 4,
+                    auto: 1000,
+                    speed: 500
+                });
+            },
+            // 专利政策
+            policyFn:function() {
+                $(".main_bottom_t_l_main2").jCarouselLite({
+                    vertical: true,
+                    hoverPause:true,
+                    visible: 4,
+                    auto: 1000,
+                    speed: 500
+                });
+            },
+            // 专利质量雷达图
+            coverageFn:function() {
+                var resArr = [ // 一组主要关注内容区域占比数据
+                    {name: '作业', value: 14610},
+                    {name: '机械工程', value: 3546},
+                    {name: '物理', value: 3227},
+                    {name: '人类生活必需', value: 3233},
+                    {name: '固定建筑物', value: 2790},
+                    {name: '电学', value: 2509},
+                    {name: '化学', value: 1709},
+                    {name: '纺织', value: 833},
+                ]
+                var indicatorArr = []
+                var numArr = []
+                for(var i = 0; i < resArr.length; i++) {
+                    indicatorArr.push({name: resArr[i].name,max: 15000}) // 雷达图的每个维度设置
+                    numArr.push(resArr[i].value)
+                }
+                var data = [
+                    {
+                        value: numArr,
+                    }
+                ]
+                var coverageChart = echarts.init(document.getElementById('coverageId'));
+                var option = { // 图表的配置选项
+                    legend: {
+                        show: true,
+                        icon: "circle",
+                        bottom: 30,
+                        center: 0,
+                        itemWidth: 14,
+                        itemHeight: 14,
+                        itemGap: 21,
+                        orient: "horizontal",
+                        data: ['a', 'b'],
+                        textStyle: {
+                            fontSize: '70%',
+                            color: '#0EFCFF'
+                        },
+                    },
+
+                    radar: {
+                        // shape: 'circle',
+                        radius: '70%',
+                        triggerEvent: true,
+                        // type: 'default',
+                        name: {
+                            textStyle: {
+                                color: '#39DCF4',
+                                fontSize: '10',
+                                // borderRadius: 3,
+                                padding: [10, 10]
+                            }
+                        },
+                        nameGap: '2',
+                        indicator: indicatorArr,
+                        splitArea: {
+                            areaStyle: {
+                                color: 'rgba(255,255,255,0)'
+                            }
+                        },
+                        axisLine: { //指向外圈文本的分隔线样式
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.2)'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                width: 1,
+                                color: 'rgba(255,255,255,.2)'
+                            }
+                        },
+
+                    },
+                    series: [{
+                        name: '重庆专利质量',
+                        type: 'radar',
+                        animationDuration: 2000,
+                        areaStyle: {
+                            normal: {
+                                color: {
+                                    type: 'linear',
+                                    opacity: 1,
+                                    x: 0,
+                                    y: 0,
+                                    x2: 0,
+                                    y2: 1,
+                                    color: '#2EEFAD'
+                                }
+                            }
+                        },
+                        symbolSize: 0,
+                        lineStyle: {
+                            normal: {
+                                // color: 'rgba(252,211,3, 1)',
+                                width: 0
+                            }
+                        },
+                        data: data
+                    }]
+                };
+
+                coverageChart.setOption(option) // 设置图表的选项
+                // 每隔 10 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    coverageChart.clear()
+                    coverageChart.setOption(option)
+                },10000)
+            },
+            // 本年公开数量
+            yearsNumFn:function() {
+                var resArr = [
+                    {name: '建筑', value: 2885},
+                    {name: '电气元件', value: 3064},
+                    {name: '仪器', value: 3850},
+                    {name: '制造工具', value: 4686},
+                    {name: '化学仪器和方法', value: 5604},
+                    {name: '运输和包装', value: 5770},
+                ]
+                // 创建一个 ECharts 实例
+                var yearsNumChart = echarts.init(document.getElementById('yearsNumId'));
+
+                var option = {
+                    grid: {
+                        containLabel: true,
+                        left: 30, // 调整左边距以适应标签显示
+                        top: 10,
+                        right: 15,
+                        bottom: 10
+                    },
+                    tooltip: {
+                        show: true,
+                        backgroundColor: '#fff',
+                        borderColor: '#ddd',
+                        borderWidth: 1,
+                        textStyle: {
+                            color: '#3c3c3c',
+                            fontSize: 16
+                        },
+                        extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+                    },
+                    xAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            fontSize: 8,
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        }
+                    },
+                    yAxis: {
+                        type: 'category',
+                        data: resArr.map(item => item.name),
+                        axisLabel: { // 明确设置 Y 轴标签样式
+                            fontSize: 8,
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        }
+                    },
+                    series: [
+                        {
+                            type: 'bar',
+                            name: '应用领域',
+                            label: {
+                                show: true,
+                                position: 'right', // 标签显示在右侧
+                                formatter: '{c}',
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 8
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#3685fe'
+                                },
+                                emphasis: {
+                                    color: '#f5616f'
+                                }
+                            },
+                            data: resArr.map(item => item.value)
+                        }
+                    ]
+                };
+
+                // 设置图表的选项
+                yearsNumChart.setOption(option);
+                // 每隔 120 秒清除图表内容并重新设置选项
+                setInterval(function() {
+                    yearsNumChart.clear()
+                    yearsNumChart.setOption(option)
+                },120000)
+            },
+            // 关注内容区域占比
+            contentFn:function() {
+                var resArr = [
+                {name: ' 重庆大学', value: 277},
+                {name: '中国建筑第八工程局有限公司', value: 346},
+                    {name: '重庆建工住宅建设有限公司', value: 395},
+                    {name: '国网重庆市电力公司', value: 402},
+                    {name: '重庆建工集团股份有限公司', value: 448},
+                    {name: '国家电网有限公司', value: 540},
+                ]
+                // 创建一个 ECharts 实例
+                var contentChart = echarts.init(document.getElementById('contentId'));
+                var option = {
+                    grid: {
+                        containLabel: true,
+                        left: 30, // 调整左边距以适应标签显示
+                        top: 10,
+                        right: 15,
+                        bottom: 10
+                    },
+                    tooltip: {
+                        show: true,
+                        backgroundColor: '#fff',
+                        borderColor: '#ddd',
+                        borderWidth: 1,
+                        textStyle: {
+                            color: '#3c3c3c',
+                            fontSize: 16
+                        },
+                        extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+                    },
+                    xAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            fontSize: 8,
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        }
+                    },
+                    yAxis: {
+                        type: 'category',
+                        data: resArr.map(item => item.name),
+                        axisLabel: { // 明确设置 Y 轴标签样式
+                            fontSize: 8,
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        }
+                    },
+                    series: [
+                        {
+                            type: 'bar',
+                            name: '专利申请人',
+                            label: {
+                                show: true,
+                                position: 'right', // 标签显示在右侧
+                                formatter: '{c}',
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 8
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#0EFCFF'
+                                },
+                                emphasis: {
+                                    color: '#f5616f'
+                                }
+                            },
+                            data: resArr.map(item => item.value)
+                        }
+                    ]
+                };
+               
+                contentChart.setOption(option)
+                setInterval(function() {
+                    contentChart.clear()
+                    contentChart.setOption(option)
+                },90000)
+            },
+            // 巡察
+            publicNumFn:function() {
+                var resArr = [
+                    {name: '2007年', value: 108},
+                    {name: '2008年', value: 294},
+                    {name: '2009年', value: 330},
+                    {name: '2010年', value: 272},
+                    {name: '2011年', value: 595},
+                    {name: '2012年', value: 240},
+                    {name: '2013年', value: 253},
+                    {name: '2014年', value: 509},
+                    {name: '2015年', value: 2197},
+                    {name: '2016年', value: 3293},
+                    {name: '2017年', value: 4084},
+                    {name: '2018年', value: 4157},
+                    {name: '2019年', value: 4158},
+                    {name: '2020年', value: 4760},
+                    {name: '2021年', value: 4461},
+                    {name: '2022年', value: 4559},
+                    {name: '2023年', value: 829},
+                ]
+                var resArr1 = [
+                    {name: '2007年', value: 0},
+                    {name: '2008年', value: 81},
+                    {name: '2009年', value: 257},
+                    {name: '2010年', value: 309},
+                    {name: '2011年', value: 365},
+                    {name: '2012年', value: 401},
+                    {name: '2013年', value: 217},
+                    {name: '2014年', value: 256},
+                    {name: '2015年', value: 594},
+                    {name: '2016年', value: 2320},
+                    {name: '2017年', value: 2452},
+                    {name: '2018年', value: 3553},
+                    {name: '2019年', value: 3415},
+                    {name: '2020年', value: 3946},
+                    {name: '2021年', value: 5280},
+                    {name: '2022年', value: 4054},
+                    {name: '2023年', value: 2848},
+                ]
+                var resArr2 = [
+                    {name: '2007年', value: 0},
+                    {name: '2008年', value: 102},
+                    {name: '2009年', value: 306},
+                    {name: '2010年', value: 350},
+                    {name: '2011年', value: 401},
+                    {name: '2012年', value: 421},
+                    {name: '2013年', value: 321},
+                    {name: '2014年', value: 271},
+                    {name: '2015年', value: 735},
+                    {name: '2016年', value: 2968},
+                    {name: '2017年', value: 2963},
+                    {name: '2018年', value: 4201},
+                    {name: '2019年', value: 3859},
+                    {name: '2020年', value: 4352},
+                    {name: '2021年', value: 5765},
+                    {name: '2022年', value: 4693},
+                    {name: '2023年', value: 3391},
+                ]
+                var publicNumChart = echarts.init(document.getElementById('publicNumId'));
+                // 创建一个 ECharts 实例
+
+
+                var option = {
+                    grid: {
+                        containLabel: true,
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                        bottom: 30
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        backgroundColor: '#fff',
+                        borderColor: '#ddd',
+                        borderWidth: 1,
+                        textStyle: {
+                            color: '#3c3c3c',
+                            fontSize: 16
+                        },
+                        extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+                    },
+                    legend: {
+                        data: ['申请数量', '授权数量', '公开数量'], // 根据需要设置折线名称
+                        textStyle: {
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        bottom:0,
+                        
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: resArr.map(item => item.name),
+                        axisLabel: {
+                            fontSize: 10,
+                            color: 'rgba(255,255,255,.7)',
+                            rotate: 45,
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.2)',
+                            }
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            fontSize: 10,
+                            color: 'rgba(255,255,255,.7)'
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.2)'
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: 'rgba(255,255,255,.2)'
+                            }
+                        }
+                    },
+                    series: [
+                        {
+                            type: 'line',
+                            name: '申请数量',
+                            smooth: true,
+                            symbol: 'circle', // 折线上的数据点标记
+                            symbolSize: 6, // 数据点标记的大小
+                            itemStyle: {
+                                normal: {
+                                    color: '#f5616f' // 设置线条颜色为红色
+                                }
+                            },
+                            lineStyle: {
+                                normal: {
+                                    color: '#f5616f' // 设置折线颜色为红色
+                                }
+                            },
+                            data: resArr.map(item => item.value)
+                        },
+
+                    {
+                        type: 'line',
+                        name: '授权数量',
+                        smooth: true,
+                        symbol: 'circle', // 折线上的数据点标记
+                        symbolSize: 6, // 数据点标记的大小
+                        itemStyle: {
+                            normal: {
+                                color: '#9977ef' // 设置线条颜色为红色
+                            }
+                        },
+                        lineStyle: {
+                            normal: {
+                                color: '#9977ef' // 设置折线颜色为红色
+                            }
+                        },
+                        data: resArr1.map(item => item.value)
+                    },
+                    {
+                        type: 'line',
+                        name: '公开数量',
+                        smooth: true,
+                        symbol: 'circle', // 折线上的数据点标记
+                        symbolSize: 6, // 数据点标记的大小
+                        itemStyle: {
+                            normal: {
+                                color: '#f7b13f' // 设置线条颜色为红色
+                            }
+                        },
+                        lineStyle: {
+                            normal: {
+                                color: '#f7b13f' // 设置折线颜色为红色
+                            }
+                        },
+                        data: resArr2.map(item => item.value)
+                    },
+                ]
+                    
+                };
+
+                publicNumChart.setOption(option)
+                setInterval(function() {
+                    publicNumChart.clear()
+                    publicNumChart.setOption(option)
+                },60000)
+            }
+
+        }
+        //初始化数据展示和图表的操作
+        var start = new apiFn()
+        start.Init()
+    })
+</script>
