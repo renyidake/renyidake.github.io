@@ -15,6 +15,7 @@
     font-size: .8vw;
     color: #fff;
 }
+/* 设置字体大小为0.8vw，颜色为白色。 */
 .percent .pec1{
     position: absolute;
     top: 40%;
@@ -30,6 +31,8 @@
     top: 50%;
     left: 32%;
 }
+/* 使用绝对定位。
+设置位置信息，使其分别位于不同的位置。 */
 .utilizeActuality {
     width: 100%;
     height: 87%;
@@ -37,6 +40,9 @@
     color: #0EFCFF;
     font-weight: 10;
 }
+/* 设置宽度和高度为100%。
+使用弹性布局（Flex）。
+设置文本颜色为蓝色，字体加粗。 */
 .utilizeActuality table {
     /* width: 90%; */
     /* height: 78%; */
@@ -44,10 +50,12 @@
     margin: 0 auto;
     border: 0 solid #0EFCFF;
 }
+/* 设置表格样式，居中对齐，无边框。 */
 .utilizeActuality table thead {
     width: 100%;
     height: 12%;
 }
+/* 设置表头的样式，占据总宽度的100%，高度为12%。 */
 .trBox {
     height: 18%;
 }

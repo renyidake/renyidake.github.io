@@ -4,7 +4,23 @@
 /* GitHub : https://github.com/VincentGarreau/particles.js
 /* How to use? : Check the GitHub README
 /* v1.0.3
-/* ----------------------------------------------- */
+/* ----------------------------------------------- 
+
+这段代码实现了一个用于创建粒子效果的 particles.js 插件。以下是一些关键点和功能的解释：
+
+launchParticlesJS(tag_id, params) 函数：用于在指定的 HTML 元素中创建粒子效果。它接受两个参数：tag_id 是要包含粒子效果的 HTML 元素的 ID，params 是包含自定义设置的参数对象。
+
+插件提供了许多设置选项，包括粒子的数量、颜色、形状、大小、运动轨迹、交互性等。
+
+插件使用 HTML5 Canvas 绘制粒子效果，根据指定的参数在画布上生成粒子。
+
+pJS.fn.canvasInit 函数用于初始化 Canvas 上下文。
+
+pJS.fn.canvasSize 函数用于调整 Canvas 大小，以适应窗口大小变化。
+
+pJS.fn.canvasPaint 和 pJS.fn.canvasRemove 函数用于绘制和清除 Canvas。
+
+pJS.fn.particle 函数用于创建单个粒子。它接受颜色、不透明度和位置参数，并在 Canvas 上绘制粒子。*/
 /**    **/
 function launchParticlesJS(tag_id, params){
 
@@ -199,6 +215,26 @@ function launchParticlesJS(tag_id, params){
     /* color */
     this.color = color;
 
+    
+// 这部分代码是插件的核心部分，包含了粒子的绘制、动画、交互等功能的实现。
+
+// pJS.fn.particle 函数中的 draw 方法用于绘制单个粒子。根据粒子的形状（圆、边界、三角形）和位置，使用 Canvas 绘制相应的形状并填充颜色。
+
+// pJS.fn.particlesCreate 函数用于在 pJS.particles.array 中创建一定数量的粒子对象。粒子的数量由 pJS.particles.nb 指定。
+
+// pJS.fn.particlesAnimate 函数用于更新粒子的位置和动画。它循环遍历 pJS.particles.array，更新粒子的位置，让粒子移动，并检查粒子之间的距离。
+
+// pJS.fn.particlesDraw 函数用于绘制所有粒子的动画。它首先清除画布，然后调用 pJS.fn.particlesAnimate 更新粒子位置，最后遍历绘制每个粒子。
+
+// pJS.fn.particlesRemove 函数用于清空粒子数组，以便在需要时重新创建粒子。
+
+// pJS.fn.vendors.distanceParticles 函数用于绘制粒子之间的连线，如果距离满足条件。这里还包括了对线条透明度的处理，使连线在一定范围内渐变透明。
+
+// pJS.fn.vendors.interactivity.listeners 函数用于设置交互事件监听器。根据设置，监听鼠标移动、离开、点击等事件，并响应相应的交互行为。
+
+// pJS.fn.vendors.interactivity.grabParticles 函数用于检查两个粒子之间的距离和鼠标位置，绘制连线。如果两个粒子距离满足条件且鼠标在一定范围内，将绘制一条连线连接它们。
+
+// 这些函数共同构成了 particles.js 插件的核心功能，通过对粒子对象的位置、运动轨迹、颜色等属性的控制，实现了各种粒子效果。
     /* opacity */
     this.opacity = opacity;
 
@@ -441,7 +477,23 @@ function launchParticlesJS(tag_id, params){
     canvas_el.remove();
     delete pJS;
   };
+  // 这部分代码包含了启动和销毁粒子效果的函数，以及与 particlesJS 插件的交互。
 
+  // pJS.fn.vendors.destroy 函数用于销毁粒子效果。它取消了动画帧的请求，移除了画布元素，并删除了 pJS 对象。
+  
+  // launchParticles 函数用于启动粒子效果。它调用了一系列函数来初始化画布、绘制粒子、设置交互监听器等。
+  
+  // launchAnimation 函数用于启动粒子的动画效果。它在每一帧调用 pJS.fn.particlesDraw 函数绘制粒子动画，使用 requestAnimationFrame 保证动画的平滑性。
+  
+  // window.requestAnimFrame 函数用于请求动画帧，它会优先选择浏览器支持的动画帧函数。如果浏览器不支持，就使用 setTimeout 模拟。
+  
+  // window.cancelRequestAnimFrame 函数用于取消动画帧请求，同样考虑了浏览器兼容性。
+  
+  // hexToRgb 函数用于将十六进制颜色值转换为 RGB 对象。
+  
+  // window.particlesJS 函数是插件的主要接口，用于启动粒子效果。它接受一个 tag_id 参数和一个可选的 params 参数。如果只传入一个参数且为对象，则将默认的 tag_id 设置为 particles-js，然后调用 launchParticlesJS 函数启动粒子效果。
+  
+  // 这部分代码完成了 particles.js 插件的完整功能，包括初始化画布、创建粒子、绘制粒子动画、设置交互等。
 
   /* --------- LAUNCH ----------- */
 

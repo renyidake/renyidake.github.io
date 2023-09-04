@@ -9,10 +9,12 @@
   margin-left: 6%;
   height: 90%;
 }
+/* 设置宽度为90%，左边距为6%，高度为90%。 */
 .firstBox .pic {
     width: 100%;
     height: 25%;
 }
+/* 设置宽度为100%，高度为25%。 */
 .pic img {
     display: inline-block;
     width: 40%;
@@ -20,6 +22,7 @@
     margin-top: 1vw;
 
 }
+/* 图片样式设置，宽度为40%，高度为80%，上边距为1vw。 */
 .first_top1 {
     margin-left: 1vw;
 }
@@ -33,6 +36,7 @@
 .picText .text_second {
     margin-left: 6vw;
 }
+/* 设置左边距为6vw。 */
 
 /* 声波动画start--- */
 .voice_animation {
@@ -44,6 +48,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+/* 设置宽度为100%，高度为20%，使用背景图片实现声波动画。 */
 /* 声波动画over--- */
 
 
@@ -56,6 +61,7 @@
     background-image: url(../img/progress_pic.png);
     background-size: 100% 100%;
 }
+/* 设置宽度为93%，高度为10%，使用背景图片实现进度条。 */
 /* 进度条over--- */
 
 
@@ -67,6 +73,7 @@
     color: #fff;
     font-size: .6vw;
 }
+/* 设置宽度为100%，高度为25%，颜色为白色，字体大小为0.6vw。 */
 .about_illness > div {
     display: inline-block;
     width: 45%;
@@ -74,13 +81,14 @@
     background-image: url(../img/illness_pic.png);
     background-size: 100% 100%;
 }
+/* 设置宽度为45%，背景图片，图片填充满容器。 */
 .prevent {
     margin-left: .5vw;
     text-indent: .2vw;
 }
 .symptom {
-    /* text-indent: .2vw; */
-    /* font-size: .5vw; */
+    /* text-indent: .2vw; 
+    font-size: .5vw; */
 }
 .symptom_content, .prevent_content {
     color: #0EFCFF;
@@ -350,6 +358,7 @@
     height: 10%;
     transform:rotate(150deg);
 }
+/* 设置定位为绝对定位，底部偏移23%，左边偏移45%，宽度为55%，高度为10%，并以150度旋转。 */
 .weather_info {
     position: absolute;
     top: -5%;
@@ -357,7 +366,7 @@
     width: 10%;
     height: 15%;
 }
-
+/* 设置定位为绝对定位，顶部偏移-5%，左边偏移18%，宽度为10%，高度为15%。 */
 /* center部分over--- */
 
 
@@ -370,6 +379,7 @@
     font-size: .6vw;
     color: #0EFCFF;
 }
+/* 设置样式为左下角的内容盒子，宽度为32%，高度为80%，字体大小为0.6vw，颜色为#0EFCFF。 */
 .leftBottom .land_data p {
     position: absolute;
     left: 52%;
@@ -392,6 +402,7 @@
     margin-right: 1%;
     /* background-color: red; */
 }
+/* 设置右侧三个内容框的样式，宽度为65%，高度为70%，右边距1%，顶部距离1%。 */
 .grow_data {
     position: relative;
     display: inline-block;
@@ -400,16 +411,19 @@
     height: 100%;
     /* background-color: pink; */
 }
+/* 设置样式为成长数据盒子，宽度为45%，高度为100%。 */
 .grow_data img {
     display: inline-block;
     width: 20%;
     height: 80%;
     margin-top: .8vw;
 }
+/* 图片样式设置，宽度为20%，高度为80%，上边距为0.8vw。 */
 .grow_data p {
     color: #0EFCFF;
     position: absolute;
 }
+/* 设置p元素的样式，颜色为#0EFCFF，使用绝对定位。 */
 .grow_data p:nth-of-type(1) {
     top: 3%;
     left: 5%;
@@ -432,6 +446,7 @@
     color: #0EFCFF;
     background: rgba(40, 229, 233, .2);
 }
+/* 设置span元素的样式，用于显示成长数据的背景和文本。 */
 .specialistSuggest {
     position: absolute;
     left: 50%;
@@ -442,7 +457,7 @@
     color: #0EFCFF;
     font-size: .6vw;
 }
-
+/* 设置专家建议盒子的样式，定位为绝对定位，左边距50%，顶部距离-15%。 */
 .specialistSuggest div:nth-of-type(1) {
     font-size: .7vw;
 }
@@ -457,6 +472,7 @@
     color: #0EFCFF;
     font-size: .6vw;
 }
+/* 设置施肥建议盒子的样式，定位为绝对定位，左边距50%，顶部距离55% */
 .fertilizationSuggest div:nth-of-type(1) {
     font-size: .7vw;
 }
@@ -474,13 +490,16 @@
     background-size: 90% 80%;
     background-repeat: no-repeat;
 }
+/* 设置天气数据盒子的样式，宽度为50%，高度为100%，左边距3%，上边距0.5%。 */
 .weather_text {
     color: #0EFCFF;
 }
+/* 设置天气数据文本的样式，颜色为#0EFCFF。 */
 .weather_text span {
     position: absolute;
     top: 35%;
 }
+/* 设置天气数据文本中的span元素的样式，用于对齐文本。 */
 .weather_text span:nth-of-type(1) {
     left: -5%;
 }
@@ -496,6 +515,7 @@
 .text_two span {
     top: 85%;
 }
+/* 设置另一组文本中的span元素的样式。 */
 .text_two span:nth-of-type(1) {
     left: 0%;
 }
@@ -530,7 +550,7 @@
     /* background-color: pink; */
     border-bottom: .02vw solid rgb(40, 229, 233);
 }
-
+/* 设置硬件设备展示中的列表项盒子的样式，宽度为68%，高度为1.5vw，边框底部为0.02vw的实线。 */
 .boxLis>li {
     /* width: 21.1%; */
     /* height: 1.4vw; */
@@ -545,6 +565,7 @@
     color: #fff;
     /* border-bottom: .02vw solid rgb(40, 229, 233); */
 }
+/* 设置硬件设备展示中的列表项的样式，背景颜色为半透明的蓝绿色，文本居中，鼠标光标为指针。 */
 .boxLis li:nth-child(4) {
     margin-right: 0;
 }
@@ -562,6 +583,7 @@
     height: 100%;
     background-color: #031426;
 }
+/* 设置硬件设备展示中的图片盒子的样式，背景颜色为深蓝色。 */
 .equipment_pic img {
     position: absolute;
     margin: auto;

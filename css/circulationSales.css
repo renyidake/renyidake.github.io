@@ -3,11 +3,18 @@
     height:49%;
 
 }
+/* .centerBoxTop 类：
+宽度设置为100%。
+高度设置为视口高度的49% */
 .centerBoxBottom{
     width: 100%;
     height: 49%;
     margin-top: 2%;
 }
+/* centerBoxBottom 类：
+宽度设置为100%。
+高度设置为视口高度的49%。
+顶部外边距（margin-top）设置为视口高度的2% */
 .chain-item{
     float: left;
     width: 21%;
@@ -19,15 +26,29 @@
     color: #0dd8df;
     text-align: center;
 }
+/* .chain-item 类：
+左浮动，使元素在父容器中靠左排列。
+宽度设置为父容器宽度的21%。
+高度设置为10vw，其中 vw 是视口宽度的单位，相对于视口宽度的10%。
+背景颜色为带有透明度的淡蓝色。
+左外边距（margin-left）设置为视口宽度的0.5vw。
+顶部外边距（margin-top）设置为视口宽度的1vw。
+文字颜色设置为亮蓝色。
+文本居中对齐。 */
 .chain-item h3{
     font-size: .8vw;
     padding:.5vw 0;
 }
+/* .chain-item h3：
+
+<h3> 标签的样式规则。
+字体大小设置为视口宽度的0.8vw。
+上下内边距（padding）设置为视口宽度的0.5vw。 */
 .chain-item p{
     font-size: .5vw;
     padding:.1vw 0;
 }
-/* #liquidfill-chart{
-    background: url(../img/2019072517094175.gif) no-repeat center bottom;
-    background-size: 100% 100%;
-} */
+/* chain-item p：
+<p> 标签的样式规则。
+字体大小设置为视口宽度的0.5vw。
+上下内边距（padding）设置为视口宽度的0.1vw。 */

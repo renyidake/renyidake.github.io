@@ -6,9 +6,11 @@
 .clear{
     clear: both;
 }
+/* 使用 clear: both; 清除浮动。 */
 .flexLeft{
     float: left;
 }
+/* 使用 float: left; 实现左浮动。 */
 .flexRight{
     float: right;
 }
@@ -18,23 +20,23 @@
     height: 60%;
     /* background: red; */
 }
-
+/* 设置主要内容盒子的样式，宽度100%，高度60%。 */
 .boxRader {
     position: relative;
     width: 100%;
     height: 80%;
 }
-
+/* 设置雷达盒子的样式，宽度100%，高度80%。 */
 .centerBox {
     background: transparent;
 }
-
+/* 设置雷达中心盒子的样式，透明背景。 */
 .centerBoxTop {
     width: 100%;
     height: 10%;
     border: .01vw solid #0efcff;
 }
-
+/* 设置雷达中心盒子上方区域的样式，高度为10%，有0.01vw的实线边框。 */
 .centerBoxTop ul {
     width: 100%;
     height: 100%;
@@ -43,11 +45,11 @@
     -webkit-align-items: center;
     color: #fff;
 }
-
+/* 设置上方区域中的 ul 元素样式，使用 Flex 布局，水平居中、垂直居中。 */
 .centerBoxTop ul>li {
     text-align: center;
 }
-
+/* 设置上方区域中的 li 元素样式，文字居中。 */
 .p-li {
     color: #0efcff;
     font-size: 1.4vw;
@@ -60,13 +62,13 @@
     color: rgb(40, 229, 233);
 
 }
-
+/* 设置底部文本区域的样式，宽度80%，居中对齐，颜色为 rgb(40, 229, 233)。 */
 .boxBottomtxt>span {
     float: left;
     margin-right: 5%;
     text-align: center;
 }
-
+/* 设置底部文本区域中的 span 元素的样式，浮动到左侧，右边距5%，居中对齐。 */
 .boxFont {
     font-size: 1.2vw;
 }
@@ -78,7 +80,7 @@
     -webkit-justify-content: center;
     font-size: .6vw;
 }
-
+/* 设置日期列表的样式，使用 Flex 布局，水平居中。 */
 .boxDatelis ul {
     width: 50%;
     margin-left:5%;

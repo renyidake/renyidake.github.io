@@ -6,7 +6,15 @@
     <!-- 设置文档的字符编码为UTF-8 -->
     <meta charset="UTF-8">
         <!-- 设置视口以适应设备宽度，初始缩放比例为1.0 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 动态设置视口以适应设备宽度，初始缩放比例为1.0 -->
+    <!-- document.write('<meta name="viewport" content="width=device-width,initial-scale=1">') -->
+
+    <!-- <meta id="testViewport" name="viewport" content="width = 380">
+<script>
+var mvp = document.getElementById('testViewport');
+mvp.setAttribute('content','width=480');
+</script> -->
 
         <!-- 指定使用最高版本的IE进行渲染 -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,6 +23,7 @@
         <!-- 引入页面样式表 本地文件 相对路径css文件夹下的样式文件-->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
+   
 </head>
     <!-- body包含了页面的实际内容结构。它描述了页面的各个部分，包括标题、数据展示、列表等 -->
 <body>
@@ -445,6 +454,7 @@
 <!-- 页面主要内容结束 -->
 </body>
 
+
 </html>
     <!-- 引入 jQuery JavaScript 库（版本1.10.2） -->
 <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
@@ -495,10 +505,10 @@
             // 其他数据展示
             // 给特定元素添加类名，设置其文本内容
             otherDataFn:function() {
-                $(".daysData").addClass("counter-value").text("829")
-                $(".weekData").addClass("counter-value").text("558")
-                $(".monthData").addClass("counter-value").text("-3730")
-                $(".someThing").addClass("counter-value").text("271")
+                $(".daysData").addClass("counter-value").text("874")
+                $(".weekData").addClass("counter-value").text("593")
+                $(".monthData").addClass("counter-value").text("-3686")
+                $(".someThing").addClass("counter-value").text("281")
                 $(".policyData").addClass("counter-value").text("3")
             },
             // 基础信息
@@ -508,10 +518,10 @@
                 var baseChart = echarts.init(document.getElementById('baseId')); // 使用 echarts 初始化图表
                 var charts = [ // 一组图表数据
                     {name: "重庆", num: 13240},
-                    {name: "湖北", num: 9158},
-                    {name: "浙江", num: 7656},
-                    {name: "四川", num: 2833},
-                    {name: "上海", num: 600},
+                    {name: "湖北", num: 9174},
+                    {name: "浙江", num: 7666},
+                    {name: "四川", num: 2844},
+                    {name: "上海", num: 601},
                     {name: "北京", num: 560},
                 ]
                 var color = ['rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249', 'rgba(100,255,249'] // 颜色数组
@@ -653,15 +663,16 @@
             //  战兴
             questionFn:function() {
                 var numArr = [  // 一组问题反馈数据
-                    {name: '新一代信息技术', value: 1267},
-                    {name: '高端装备制造', value: 2539},
-                    {name: '新材料', value: 1642},
-                    {name: '新能源汽车', value: 357},
-                    {name: '新能源', value: 1313},
                     {name: '节能环保', value: 2886},
-                    {name: '数字创意', value: 179},
-                    {name: '相关服务业', value: 573},
-                    {name: '生物', value: 1652},
+                    {name: '高端装备制造', value: 2541},
+                    {name: '生物', value: 1653},
+                    {name: '新材料', value: 1645},
+                    {name: '新能源', value: 1313},
+                    {name: '新一代信息技术', value: 1270},
+                    {name: '相关服务业', value: 574},          
+                    {name: '新能源汽车', value: 357},
+                    {name: '数字创意', value: 180},
+
                 ]
                 // for(var i = 0; i < data.list.length; i++) {
                 //     numArr.push({name: data.list[i].name,value: data.list[i].num})
@@ -719,9 +730,9 @@
             // 法律状态
             publicityFn:function() {
                 var dataArr = [ // 法律状态数据
-                    {name: '有效专利', value: 19908},
-                    {name: '失效专利', value: 12548},
-                    {name: '审中专利', value: 2643},
+                    {name: '有效专利', value: 19929},
+                    {name: '失效专利', value: 12569},
+                    {name: '审中专利', value: 2648},
 
                 ]
                 for(var i = 1; i <= dataArr.length; i++) {
@@ -815,7 +826,7 @@
             },
             // 三务公开数量
             threeTasksFn:function() {
-                let names = "35099";
+                let names = "35146";
                 //main_top_left_c_l_n1  main_top_left_top_con_list
                 if(6 - names.length > 0) {
                     for(g = 0; g < 6 - names.length; g++) {
@@ -826,9 +837,9 @@
                     $(".main_top_middle_num_list"+(names.length - j)).text(names.substr(j,1))
                 }
                 var dataArr = [ // 一组三务公开数量数据
-                    {name: '发明专利', value: 6402},
-                    {name: '实用新型', value: 26055},
-                    {name: '外观设计', value: 2642},
+                    {name: '发明专利', value: 6413},
+                    {name: '实用新型', value: 26088},
+                    {name: '外观设计', value: 2645},
                 ]
                 for(var i = 1; i <= dataArr.length; i++) {
                     $(".main_top_left_c_l_n"+i).addClass("counter-value").text(dataArr[i-1].value)
@@ -884,12 +895,13 @@
             },
             // 各事务所专利
             departmentFn:function() {
-                var dataArr = [ // 各事务所专利数据
-                    {name: '公司', value: 32151},
-                    {name: '个人', value: 1812},
-                    {name: '院校/研究所', value: 1160},
-                    {name: '医院', value: 264},
+                var dataArr = [ // 各事务所专利数据 顺序为 扇区分布顺序
+                    
                     {name: '政府机构', value: 85},
+                    {name: '院校/研究所', value: 1162},
+                    {name: '公司', value: 32231},
+                    {name: '个人', value: 1815},
+                    {name: '医院', value: 265},
                     {name: '其他', value: 70},
                 ]
                     // 中间滚动数据展示
@@ -1005,14 +1017,14 @@
             // 专利质量雷达图
             coverageFn:function() {
                 var resArr = [ // 一组主要关注内容区域占比数据
-                    {name: '作业', value: 14610},
-                    {name: '机械工程', value: 3546},
-                    {name: '物理', value: 3227},
-                    {name: '人类生活必需', value: 3233},
-                    {name: '固定建筑物', value: 2790},
-                    {name: '电学', value: 2509},
+                    {name: '作业', value: 14634},
+                    {name: '机械工程', value: 3551},
+                    {name: '物理', value:3235},
+                    {name: '人类生活必需', value: 3231},
+                    {name: '固定建筑物', value: 2793},
+                    {name: '电学', value: 2513},
                     {name: '化学', value: 1709},
-                    {name: '纺织', value: 833},
+                    {name: '纺织', value: 835},
                 ]
                 var indicatorArr = []
                 var numArr = []
@@ -1115,11 +1127,11 @@
             yearsNumFn:function() {
                 var resArr = [
                     {name: '建筑', value: 2885},
-                    {name: '电气元件', value: 3064},
+                    {name: '电气元件', value: 3061},
                     {name: '仪器', value: 3850},
                     {name: '制造工具', value: 4686},
                     {name: '化学仪器和方法', value: 5604},
-                    {name: '运输和包装', value: 5770},
+                    {name: '运输和包装', value: 5769},
                 ]
                 // 创建一个 ECharts 实例
                 var yearsNumChart = echarts.init(document.getElementById('yearsNumId'));
@@ -1208,7 +1220,7 @@
             contentFn:function() {
                 var resArr = [
                 {name: ' 重庆大学', value: 277},
-                {name: '中国建筑第八工程局有限公司', value: 346},
+                {name: '中国建筑第八工程局有限公司', value: 347},
                     {name: '重庆建工住宅建设有限公司', value: 395},
                     {name: '国网重庆市电力公司', value: 402},
                     {name: '重庆建工集团股份有限公司', value: 448},
@@ -1311,9 +1323,9 @@
                     {name: '2018年', value: 4157},
                     {name: '2019年', value: 4158},
                     {name: '2020年', value: 4760},
-                    {name: '2021年', value: 4461},
-                    {name: '2022年', value: 4559},
-                    {name: '2023年', value: 829},
+                    {name: '2021年', value: 4462},
+                    {name: '2022年', value: 4560},
+                    {name: '2023年', value: 874},
                 ]
                 var resArr1 = [
                     {name: '2007年', value: 0},
@@ -1332,7 +1344,7 @@
                     {name: '2020年', value: 3946},
                     {name: '2021年', value: 5280},
                     {name: '2022年', value: 4054},
-                    {name: '2023年', value: 2848},
+                    {name: '2023年', value: 2889},
                 ]
                 var resArr2 = [
                     {name: '2007年', value: 0},
@@ -1349,9 +1361,9 @@
                     {name: '2018年', value: 4201},
                     {name: '2019年', value: 3859},
                     {name: '2020年', value: 4352},
-                    {name: '2021年', value: 5765},
-                    {name: '2022年', value: 4693},
-                    {name: '2023年', value: 3391},
+                    {name: '2021年', value: 5764},
+                    {name: '2022年', value: 4691},
+                    {name: '2023年', value: 3442},
                 ]
                 var publicNumChart = echarts.init(document.getElementById('publicNumId'));
                 // 创建一个 ECharts 实例

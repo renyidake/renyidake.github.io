@@ -6,6 +6,7 @@
     font-size: 0.8vw;
     color: #fff;
 }
+/* 设置单位文本的样式，绝对定位，位于顶部左侧，使用白色文本颜色，字体大小为0.8vw。 */
 .dataGet, .dataStorage, .gettingDate, .dataClean, .dataSave, .dataDesensitization{
     width: 100%;
     height: 100%;
@@ -29,6 +30,7 @@
     left: 18%;
     /* margin-top: 20%; */
 }
+/* 设置文本盒子中饼图文本的样式，绝对定位，颜色为 #fff，字体大小为0.8vw，位置调整。 */
 .textBox .pieText {
     top: 50%;
 }
@@ -49,28 +51,34 @@
     padding: .3vw 0;
     border-bottom: 1px solid #0efcff;
 }
+/* 设置服务信息样式，包含边框、下划线 */
 .service span{
     font-size: .6vw;
     color: #0efcff;
 }
+/* 设置服务信息标题文本样式 */
 .service-data{
     overflow: hidden;
     margin: .6vw 1vw;
     padding: .3vw 0;
 }
+/* 设置服务数据样式。 */
 .service-data .img-box{
     width: 4vw;
     height: 4vw;
 }
+/* 设置服务数据图像框样式。 */
 .service-data .img-box img{
     width: 100%;
     height: 100%;
 }
+
 .service-data span{
     font-size: .6vw;
     color: #0efcff;
     margin-top: .2vw;
 }
+
 .service-data .right ul li{
     float: right;
     color: #0efcff;
@@ -78,6 +86,7 @@
     padding: .4vw;
     text-align: center;
 }
+/* 设置服务数据右侧 ul 元素中 li 元素的样式。 */
 .service-data .right ul li p{
     margin: .5vw 0;
 }
@@ -421,6 +430,8 @@
     background: rgba(255,255,255, .2);
     display: none;
 }
+/* 设置地图内容的样式，使用绝对定位来放置在地图的特定位置。
+设置不同的背景颜色和显示属性，其中 .mapContent2 和 .mapContent3 设置为 display: none，表示初始时不显示。 */
 .mapContentFont {
     width: 85%;
     margin-left: 12%;
@@ -428,9 +439,11 @@
     color: #0efcff;
     letter-spacing: .05vw;
 }
+/* 设置地图内容的文字样式，调整字体大小、颜色和字间距。 */
 .mapContentFont:nth-child(1) {
     margin-top: .6vw;
 }
+/* 针对第一个地图内容调整上边距，使其与图标对齐。 */
 .mapContentFont span {
     color: white;
 }
@@ -444,10 +457,12 @@
     font-size: .8vw;
     letter-spacing: .05vw;
 }
+/* 设置地图区域中的总数样式，包括字体大小、颜色和位置。 */
 .mapAllNum span {
     color: white;
     font-size: 1.1vw;
 }
+/* 设置总数中的数字的样式，包括字体大小和颜色。 */
 .mapfooterFont {
     position: absolute;
     right: 0vw;
@@ -457,11 +472,14 @@
     color: #0efcff;
     font-size: .7vw;
 }
+/* 设置地图底部图标文字样式，包括位置、字体大小和颜色。 */
 .mapfooterFont img {
     width: 50%;
     padding-top: .3vw;
     margin: 0 .3vw;
 }
+/* 设置地图底部图标的样式，包括宽度、内边距和外边距。 */
 .mapFootertitle {
     margin-bottom: .3vw;
 }
+/* 设置地图底部标题的样式，包括下边距。 */

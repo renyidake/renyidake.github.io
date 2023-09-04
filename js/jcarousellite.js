@@ -2,6 +2,7 @@
  * jCarouselLite - jQuery plugin to navigate images/any content in a carousel style widget.
  * @requires jQuery v1.2 or above
  *
+ * 这段代码是一个jQuery插件，用于创建一个轮播（carousel）式的导航小部件，用于在网页上显示图像或其他内容的轮播效果。这个插件名为jCarouselLite，作者是Ganeshji Marwaha。以下是插件的一些关键点和选项说明：
  * http://gmarwaha.com/jquery/jcarousellite/
  *
  * Copyright (c) 2007 Ganeshji Marwaha (gmarwaha.com)
