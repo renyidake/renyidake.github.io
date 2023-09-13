@@ -269,7 +269,7 @@ mvp.setAttribute('content','width=480');
                                     <div class="main_bottom_t_l_main_list">
                                         <!-- 标题 -->
                                         <div class="main_bottom_t_list_title main_bottom_t_list_title1">
-                                            <a href="https://mp.weixin.qq.com/s/HHPiAipWwCdIL78Ex5yjfQ" target="_blank" style="color: white;">江津区知识产权工作推进会暨主题沙龙活动圆满落幕</a>
+                                            <a href="https://mp.weixin.qq.com/s/HHPiAipWwCdIL78Ex5yjfQ" target="_blank" style="color: white;"> 2023年江津区知识产权工作推进会暨“专利数据应用过程中的价值实现”主题沙龙活动圆满落幕</a>
                                         </div>
                                         <!-- 时间 -->
                                         <div class="main_bottom_t_list_time main_bottom_t_list_time1">2023/03/17</div>
@@ -562,6 +562,15 @@ mvp.setAttribute('content','width=480');
                 title: {
                     show: false
                 },
+                tooltip: {
+                    show: true,
+
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: 16
+                    },
+                },
+                   
                 grid: {
                     // borderWidth: 1,
                     top: '10%',
@@ -771,9 +780,10 @@ mvp.setAttribute('content','width=480');
                     series: [
                         // 主要展示层的
                         {
-                            radius: ['70%', '90%'],
+                            radius: ['60%', '90%'],
                             center: ['25%', '50%'],
                             type: 'pie',
+                            animationDuration: 2000,
                             label: {
                                 normal: {
                                     position: 'inner',
@@ -855,6 +865,7 @@ mvp.setAttribute('content','width=480');
                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                     },
                     legend: {
+                        // show:false,
                         itemWidth: 15,// 标志图形的长度
                         itemHeight: 15,// 标志图形的宽度
                         orient: 'vertical',
@@ -873,10 +884,16 @@ mvp.setAttribute('content','width=480');
                         {
                             name:'专利类型',
                             type:'pie',
-                            animationDuration: 1500,
-                            radius: ['70%', '90%'],
+                            animationDuration: 1500, //1.5s内平滑过渡
+                            radius: ['60%', '90%'],
                             center: ['25%', '50%'],
-                            roseType : 'radius',
+                            // roseType : 'radius', 玫瑰图
+                            avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#1D2B58',
+        borderWidth: 4
+      },
                             label: {
                                 normal: {
                                     position: 'inner',
@@ -897,6 +914,7 @@ mvp.setAttribute('content','width=480');
             departmentFn:function() {
                 var dataArr = [ // 各事务所专利数据 顺序为 扇区分布顺序
                     
+
                     {name: '政府机构', value: 85},
                     {name: '院校/研究所', value: 1162},
                     {name: '公司', value: 32231},
@@ -940,6 +958,7 @@ mvp.setAttribute('content','width=480');
                             type: 'pie',
                             radius: ['50%', '70%'],
                             center: ['78%', '52%'],
+                            avoidLabelOverlap: true,
                             labelLine: {
                                 normal: {
                                     length: 12,
@@ -1014,298 +1033,973 @@ mvp.setAttribute('content','width=480');
                     speed: 500
                 });
             },
-            // 专利质量雷达图
-            coverageFn:function() {
-                var resArr = [ // 一组主要关注内容区域占比数据
-                    {name: '作业', value: 14634},
-                    {name: '机械工程', value: 3551},
-                    {name: '物理', value:3235},
-                    {name: '人类生活必需', value: 3231},
-                    {name: '固定建筑物', value: 2793},
-                    {name: '电学', value: 2513},
-                    {name: '化学', value: 1709},
-                    {name: '纺织', value: 835},
-                ]
-                var indicatorArr = []
-                var numArr = []
-                for(var i = 0; i < resArr.length; i++) {
-                    indicatorArr.push({name: resArr[i].name,max: 15000}) // 雷达图的每个维度设置
-                    numArr.push(resArr[i].value)
-                }
-                var data = [
+            // // 专利质量雷达图
+            // coverageFn:function() {
+            //     var resArr = [ // 一组主要关注内容区域占比数据
+            //         {name: '作业', value: 14634},
+            //         {name: '机械工程', value: 3551},
+            //         {name: '物理', value:3235},
+            //         {name: '人类生活必需', value: 3231},
+            //         {name: '固定建筑物', value: 2793},
+            //         {name: '电学', value: 2513},
+            //         {name: '化学', value: 1709},
+            //         {name: '纺织', value: 835},
+            //     ]
+            //     var indicatorArr = []
+            //     var numArr = []
+            //     for(var i = 0; i < resArr.length; i++) {
+            //         indicatorArr.push({name: resArr[i].name,max: 15000}) // 雷达图的每个维度设置
+            //         numArr.push(resArr[i].value)
+            //     }
+            //     var data = [
+            //         {
+            //             value: numArr,
+            //         }
+            //     ]
+            //     var coverageChart = echarts.init(document.getElementById('coverageId'));
+            //     var option = { // 图表的配置选项
+            //         legend: {
+            //             show: true,
+            //             icon: "circle",
+            //             bottom: 30,
+            //             center: 0,
+            //             itemWidth: 14,
+            //             itemHeight: 14,
+            //             itemGap: 21,
+            //             orient: "horizontal",
+            //             data: ['a', 'b'],
+            //             textStyle: {
+            //                 fontSize: '70%',
+            //                 color: '#0EFCFF'
+            //             },
+            //         },
+
+            //         radar: {
+            //             // shape: 'circle',
+            //             radius: '70%',
+            //             triggerEvent: true,
+            //             // type: 'default',
+            //             name: {
+            //                 textStyle: {
+            //                     color: '#39DCF4',
+            //                     fontSize: '10',
+            //                     // borderRadius: 3,
+            //                     padding: [10, 10]
+            //                 }
+            //             },
+            //             nameGap: '2',
+            //             indicator: indicatorArr,
+            //             splitArea: {
+            //                 areaStyle: {
+            //                     color: 'rgba(255,255,255,0)'
+            //                 }
+            //             },
+            //             axisLine: { //指向外圈文本的分隔线样式
+            //                 lineStyle: {
+            //                     color: 'rgba(255,255,255,.2)'
+            //                 }
+            //             },
+            //             splitLine: {
+            //                 lineStyle: {
+            //                     width: 1,
+            //                     color: 'rgba(255,255,255,.2)'
+            //                 }
+            //             },
+
+            //         },
+            //         series: [{
+            //             name: '重庆专利质量',
+            //             type: 'radar',
+            //             animationDuration: 2000,
+            //             areaStyle: {
+            //                 normal: {
+            //                     color: {
+            //                         type: 'linear',
+            //                         opacity: 1,
+            //                         x: 0,
+            //                         y: 0,
+            //                         x2: 0,
+            //                         y2: 1,
+            //                         color: '#2EEFAD'
+            //                     }
+            //                 }
+            //             },
+            //             symbolSize: 0,
+            //             lineStyle: {
+            //                 normal: {
+            //                     // color: 'rgba(252,211,3, 1)',
+            //                     width: 0
+            //                 }
+            //             },
+            //             data: data
+            //         }]
+            //     };
+
+            //     coverageChart.setOption(option) // 设置图表的选项
+            coverageFn: function () {
+                var treemapData = {
+    name: 'IPC部分布', // 根节点名称（可自定义）
+    children: [
+        {
+            name: '作业',
+            children: [ 
+                { name: '输送；包装；贮存；搬运薄的或细丝状材料', value: 2544},
+                { name: '一般的物理或化学的方法或装置', value: 1692 },
+                { name: ' 机床；其他类目中不包括的金属加工', value: 1624 },
+                { name: '基本上无切削的金属机械加工；金属冲压', value: 882},
+                { name: '无轨陆用车辆 B62B手动车辆，例如手推车或摇篮车；雪橇', value: 854},
+                { name: ' 塑料的加工；一般处于塑性状态物质的加工', value: 737},
+            ],
+        },
+        {
+            name: '机械工程',
+            children: [
+                { name: '工程元件或部件；为产生和保持机器或设备的有效运行的一般措施', value: 1077 },
+                { name: '供热；炉灶；通风', value: 527 },
+                { name: '干燥', value: 370 },
+                { name: '照明', value: 235},
+                { name: '液体变容式机械；液体泵或弹性流体泵', value: 234 },
+                { name: '燃烧发动机；热气或燃烧生成物的发动机装置', value: 207},
+            ],
+        },
+        {
+            name: '物理',
+            children: [
+            { name: '测量；测试', value: 2119},
+                { name: '计算；推算或计数', value: 404 },
+                { name: '教育；密码术；显示；广告；印鉴', value: 182 },
+                { name: '光学', value: 144 },
+                { name: '控制；调节', value: 130 },
+                { name: '信号装置', value: 117},
+            ],
+        },
+        {
+            name: '人类生活必需',
+            children: [
+            { name: '家具；家庭用的物品或设备；咖啡磨；香料磨；一般吸尘器', value: 790 },
+                { name: '医学或兽医学；卫生学', value: 761},
+                { name: '农业；林业；畜牧业；狩猎；诱捕；捕鱼', value: 702},
+                { name: '其他类不包含的食品或食料；及其处理', value: 381 },
+                { name: '服装', value: 117 },
+                { name: '手携物品或旅行品', value: 98 },
+            ],
+        },
+        {
+            name: '固定建筑物',
+            children: [
+            { name: '建筑物', value: 1325},
+                { name: '道路、铁路或桥梁的建筑', value: 402},
+                { name: '水利工程；基础；疏浚', value: 395},
+                { name: '土层或岩石的钻进；采矿', value: 237},
+                { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 188 },
+                { name: '给水；排水', value: 159},
+            ],
+        },
+        {
+            name: '电学',
+            children: [
+            { name: '建筑物', value: 1325},
+                { name: '道路、铁路或桥梁的建筑', value: 402},
+                { name: '水利工程；基础；疏浚', value: 395},
+                { name: '土层或岩石的钻进；采矿', value: 237 },
+                { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 188 },
+                { name: '给水；排水', value: 159},
+            ],
+        },
+        {
+            name: '化学',
+            children: [
+            { name: '建筑物', value: 1325},
+                { name: '道路、铁路或桥梁的建筑', value: 402},
+                { name: '水利工程；基础；疏浚', value: 395},
+                { name: '土层或岩石的钻进；采矿', value: 237 },
+                { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 188},
+                { name: '给水；排水', value: 159 },
+            ],
+        },
+        {
+            name: '纺织',
+            children: [
+            { name: '建筑物', value: 1325},
+                { name: '道路、铁路或桥梁的建筑', value: 402},
+                { name: '水利工程；基础；疏浚', value: 395},
+                { name: '土层或岩石的钻进；采矿', value: 237 },
+                { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 188 },
+                { name: '给水；排水', value: 159 },
+            ],
+        },
+
+    ],
+};
+
+
+    var coverageChart = echarts.init(document.getElementById('coverageId'));
+    var option = {
+        series: [
+            {
+                name:'专利技术分布',
+                type: 'treemap',
+                data: [treemapData], //图表的数据
+                color:["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+ "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+ "#0780cf", "#765005"],
+                breadcrumb: {
+                    show: true,
+                },
+                levels: [ //图表的层级样式
                     {
-                        value: numArr,
+                        itemStyle: {
+                            borderWidth: 0,
+                            gapWidth: 5,
+                            borderColor: '#fff',
+                        },
+                    },
+                ],
+                leafDepth: 2, // 显示的层级深度
+                label: { //配置标签显示
+                    show: true,
+                    position: 'inside',
+                    formatter: '{b}',
+                    fontSize: 10,
+                },
+                emphasis: { //标签的高亮样式
+                    label: {
+                        fontSize: 14,
+                    },
+                },
+                
+                
+            },
+        ],
+        tooltip: {
+                show: true, // 显示tooltip
+                textStyle: {
+        color: '#fff',
+        fontSize: 16
+    },
+                // formatter: function(params) {
+                //     // 在tooltip中显示名称和值
+                //     return params.data.name + ': ' + params.data.value;
+                // },
+            },
+    };
+    coverageChart.setOption(option);
+            },
+
+            yearsNumFn: function () {
+    var resArr = [
+        { name: '运输和包装', value: 5769 },
+        { name: '化学仪器和方法', value: 5604 },
+        { name: '制造工具', value: 4686 },
+        { name: '仪器', value: 3850 },
+        { name: '电气元件', value: 3061 },
+        { name: '建筑', value: 2885 },
+    ];
+
+    // 创建一个 ECharts 实例
+    var yearsNumChart = echarts.init(document.getElementById('yearsNumId'));
+
+    var option = {
+        polar: { // 使用极坐标系
+            radius: '80%' // 设置极坐标半径
+        },
+        angleAxis: { // 角度轴
+            type: 'category',
+            data: resArr.map(item => item.name),
+            startAngle: 90,
+            axisLabel: { // 角度轴标签样式
+            fontSize: 10,
+            color: '#fff' // 设置标签颜色为白色
+        }
+        },
+        radiusAxis: { // 半径轴
+            max: 6000, // 设置半径轴的最大值
+            axisLabel: { // 半径轴标签样式  
+            fontSize: 10,
+            color: '#fff' // 设置标签颜色为白色
+        },
+        // z: 100
+        },
+        tooltip: {
+            show: true,
+            textStyle: {
+                color: '#fff',
+                fontSize: 16
+            },
+            extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+        },
+        series: [
+            {
+                type: 'bar',
+                name: '应用领域',
+                coordinateSystem: 'polar', // 使用极坐标系
+                label: {
+                    show: true,
+                    position: 'middle', // 标签显示在中间
+                    formatter: '{c}',
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: 8
                     }
-                ]
-                var coverageChart = echarts.init(document.getElementById('coverageId'));
-                var option = { // 图表的配置选项
-                    legend: {
-                        show: true,
-                        icon: "circle",
-                        bottom: 30,
-                        center: 0,
-                        itemWidth: 14,
-                        itemHeight: 14,
-                        itemGap: 21,
-                        orient: "horizontal",
-                        data: ['a', 'b'],
-                        textStyle: {
-                            fontSize: '70%',
-                            color: '#0EFCFF'
-                        },
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#3685fe',
+                        opacity: 0.7 
                     },
+                    emphasis: {
+                        color: '#f5616f'
+                    }
+                },
+                data: resArr.map(item => item.value)
+            }
+        ]
+    };
 
-                    radar: {
-                        // shape: 'circle',
-                        radius: '70%',
-                        triggerEvent: true,
-                        // type: 'default',
-                        name: {
-                            textStyle: {
-                                color: '#39DCF4',
-                                fontSize: '10',
-                                // borderRadius: 3,
-                                padding: [10, 10]
-                            }
-                        },
-                        nameGap: '2',
-                        indicator: indicatorArr,
-                        splitArea: {
-                            areaStyle: {
-                                color: 'rgba(255,255,255,0)'
-                            }
-                        },
-                        axisLine: { //指向外圈文本的分隔线样式
-                            lineStyle: {
-                                color: 'rgba(255,255,255,.2)'
-                            }
-                        },
-                        splitLine: {
-                            lineStyle: {
-                                width: 1,
-                                color: 'rgba(255,255,255,.2)'
-                            }
-                        },
+    // 设置图表的选项
+    yearsNumChart.setOption(option);
 
-                    },
-                    series: [{
-                        name: '重庆专利质量',
-                        type: 'radar',
-                        animationDuration: 2000,
-                        areaStyle: {
-                            normal: {
-                                color: {
-                                    type: 'linear',
-                                    opacity: 1,
-                                    x: 0,
-                                    y: 0,
-                                    x2: 0,
-                                    y2: 1,
-                                    color: '#2EEFAD'
-                                }
-                            }
-                        },
-                        symbolSize: 0,
-                        lineStyle: {
-                            normal: {
-                                // color: 'rgba(252,211,3, 1)',
-                                width: 0
-                            }
-                        },
-                        data: data
-                    }]
-                };
+    // 每隔 120 秒清除图表内容并重新设置选项
+    setInterval(function () {
+        yearsNumChart.clear();
+        yearsNumChart.setOption(option);
+    }, 10000);
+},
 
-                coverageChart.setOption(option) // 设置图表的选项
-                // 每隔 10 秒清除图表内容并重新设置选项
-                setInterval(function() {
-                    coverageChart.clear()
-                    coverageChart.setOption(option)
-                },10000)
-            },
-            // 本年公开数量
-            yearsNumFn:function() {
-                var resArr = [
-                    {name: '建筑', value: 2885},
-                    {name: '电气元件', value: 3061},
-                    {name: '仪器', value: 3850},
-                    {name: '制造工具', value: 4686},
-                    {name: '化学仪器和方法', value: 5604},
-                    {name: '运输和包装', value: 5769},
-                ]
-                // 创建一个 ECharts 实例
-                var yearsNumChart = echarts.init(document.getElementById('yearsNumId'));
 
-                var option = {
-                    grid: {
-                        containLabel: true,
-                        left: 30, // 调整左边距以适应标签显示
-                        top: 10,
-                        right: 15,
-                        bottom: 10
-                    },
-                    tooltip: {
-                        show: true,
-                        backgroundColor: '#fff',
-                        borderColor: '#ddd',
-                        borderWidth: 1,
-                        textStyle: {
-                            color: '#3c3c3c',
-                            fontSize: 16
-                        },
-                        extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
-                    },
-                    xAxis: {
-                        type: 'value',
-                        axisLabel: {
-                            fontSize: 8,
-                            color: 'rgba(255,255,255,.7)'
-                        },
-                        axisLine: {
-                            show: false
-                        },
-                        axisTick: {
-                            show: false
-                        }
-                    },
-                    yAxis: {
-                        type: 'category',
-                        data: resArr.map(item => item.name),
-                        axisLabel: { // 明确设置 Y 轴标签样式
-                            fontSize: 8,
-                            color: 'rgba(255,255,255,.7)'
-                        },
-                        axisLine: {
-                            show: false
-                        },
-                        axisTick: {
-                            show: false
-                        }
-                    },
-                    series: [
-                        {
-                            type: 'bar',
-                            name: '应用领域',
-                            label: {
-                                show: true,
-                                position: 'right', // 标签显示在右侧
-                                formatter: '{c}',
-                                textStyle: {
-                                    color: '#fff',
-                                    fontSize: 8
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#3685fe'
-                                },
-                                emphasis: {
-                                    color: '#f5616f'
-                                }
-                            },
-                            data: resArr.map(item => item.value)
-                        }
-                    ]
-                };
+            // // 本年公开数量
+            // yearsNumFn:function() {
+            //     var resArr = [
+            //         {name: '建筑', value: 2885},
+            //         {name: '电气元件', value: 3061},
+            //         {name: '仪器', value: 3850},
+            //         {name: '制造工具', value: 4686},
+            //         {name: '化学仪器和方法', value: 5604},
+            //         {name: '运输和包装', value: 5769},
+            //     ]
+            //     // 创建一个 ECharts 实例
+            //     var yearsNumChart = echarts.init(document.getElementById('yearsNumId'));
 
-                // 设置图表的选项
-                yearsNumChart.setOption(option);
-                // 每隔 120 秒清除图表内容并重新设置选项
-                setInterval(function() {
-                    yearsNumChart.clear()
-                    yearsNumChart.setOption(option)
-                },120000)
-            },
-            // 关注内容区域占比
+            //     var option = {
+            //         grid: {
+            //             containLabel: true,
+            //             left: 30, // 调整左边距以适应标签显示
+            //             top: 10,
+            //             right: 15,
+            //             bottom: 10
+            //         },
+            //         tooltip: {
+            //             show: true,
+            //             // backgroundColor: '#fff',
+            //             // borderColor: '#ddd',
+            //             // borderWidth: 1,
+            //             textStyle: {
+            //                 color: '#fff',
+            //                 fontSize: 16
+            //             },
+            //             extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+            //         },
+            //         xAxis: {
+            //             type: 'value',
+            //             axisLabel: {
+            //                 fontSize: 8,
+            //                 color: 'rgba(255,255,255,.7)'
+            //             },
+            //             axisLine: {
+            //                 show: false
+            //             },
+            //             axisTick: {
+            //                 show: false
+            //             }
+            //         },
+            //         yAxis: {
+            //             type: 'category',
+            //             data: resArr.map(item => item.name),
+            //             axisLabel: { // 明确设置 Y 轴标签样式
+            //                 fontSize: 8,
+            //                 color: 'rgba(255,255,255,.7)'
+            //             },
+            //             axisLine: {
+            //                 show: false
+            //             },
+            //             axisTick: {
+            //                 show: false
+            //             }
+            //         },
+            //         series: [
+            //             {
+            //                 type: 'bar',
+            //                 name: '应用领域',
+            //                 label: {
+            //                     show: true,
+            //                     position: 'right', // 标签显示在右侧
+            //                     formatter: '{c}',
+            //                     textStyle: {
+            //                         color: '#fff',
+            //                         fontSize: 8
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: {
+            //                         color: '#3685fe'
+            //                     },
+            //                     emphasis: {
+            //                         color: '#f5616f'
+            //                     }
+            //                 },
+            //                 data: resArr.map(item => item.value)
+            //             }
+            //         ]
+            //     };
+
+            //     // 设置图表的选项
+            //     yearsNumChart.setOption(option);
+            //     // 每隔 120 秒清除图表内容并重新设置选项
+            //     setInterval(function() {
+            //         yearsNumChart.clear()
+            //         yearsNumChart.setOption(option)
+            //     },120000)
+            // },
+
+
             contentFn:function() {
-                var resArr = [
-                {name: ' 重庆大学', value: 277},
-                {name: '中国建筑第八工程局有限公司', value: 347},
-                    {name: '重庆建工住宅建设有限公司', value: 395},
-                    {name: '国网重庆市电力公司', value: 402},
-                    {name: '重庆建工集团股份有限公司', value: 448},
-                    {name: '国家电网有限公司', value: 540},
-                ]
-                // 创建一个 ECharts 实例
-                var contentChart = echarts.init(document.getElementById('contentId'));
-                var option = {
-                    grid: {
-                        containLabel: true,
-                        left: 30, // 调整左边距以适应标签显示
-                        top: 10,
-                        right: 15,
-                        bottom: 10
-                    },
-                    tooltip: {
-                        show: true,
-                        backgroundColor: '#fff',
-                        borderColor: '#ddd',
-                        borderWidth: 1,
-                        textStyle: {
-                            color: '#3c3c3c',
-                            fontSize: 16
-                        },
-                        extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
-                    },
-                    xAxis: {
-                        type: 'value',
-                        axisLabel: {
-                            fontSize: 8,
-                            color: 'rgba(255,255,255,.7)'
-                        },
-                        axisLine: {
-                            show: false
-                        },
-                        axisTick: {
-                            show: false
-                        }
-                    },
-                    yAxis: {
-                        type: 'category',
-                        data: resArr.map(item => item.name),
-                        axisLabel: { // 明确设置 Y 轴标签样式
-                            fontSize: 8,
-                            color: 'rgba(255,255,255,.7)'
-                        },
-                        axisLine: {
-                            show: false
-                        },
-                        axisTick: {
-                            show: false
-                        }
-                    },
-                    series: [
-                        {
-                            type: 'bar',
-                            name: '专利申请人',
-                            label: {
-                                show: true,
-                                position: 'right', // 标签显示在右侧
-                                formatter: '{c}',
-                                textStyle: {
-                                    color: '#fff',
-                                    fontSize: 8
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#0EFCFF'
-                                },
-                                emphasis: {
-                                    color: '#f5616f'
-                                }
-                            },
-                            data: resArr.map(item => item.value)
-                        }
-                    ]
-                };
+var contentChart = echarts.init(document.getElementById('contentId'));
+// var currentTimeIndex = 0;
+var option;
+const updateFrequency = 2000;
+const dimension = 0;
+var timeData=
+[
+  ["申请人", "数量", "年份"],
+  ["隆鑫通用动力股份有限公司", 97, 2014],
+  ["重庆大学", 136, 2014],
+  ["重庆隆鑫机车有限公司", 139, 2014],
+  ["国网重庆市电力公司", 157, 2014],
+  ["重庆宗申机车工业制造有限公司", 190, 2014],
+  ["国家电网有限公司", 210, 2014],
+  ["隆鑫通用动力股份有限公司", 106, 2015],
+  ["重庆大学", 156, 2015],
+  ["重庆隆鑫机车有限公司", 162, 2015],
+  ["国网重庆市电力公司", 176, 2015],
+  ["重庆宗申机车工业制造有限公司", 190, 2015],
+  ["国家电网有限公司", 262, 2015],
+  ["隆鑫通用动力股份有限公司", 110, 2016],
+  ["重庆隆鑫机车有限公司", 168, 2016],
+  ["重庆大学", 175, 2016],
+  ["重庆宗申机车工业制造有限公司", 190, 2016],
+  ["国网重庆市电力公司", 204, 2016],
+  ["国家电网有限公司", 308, 2016],
+  ["重庆建工集团股份有限公司", 143, 2017],
+  ["重庆隆鑫机车有限公司", 169, 2017],
+  ["重庆宗申机车工业制造有限公司", 190, 2017],
+  ["重庆大学", 213, 2017],
+  ["国网重庆市电力公司", 237, 2017],
+  ["国家电网有限公司", 354, 2017],
+  ["重庆建工住宅建设有限公司", 187, 2018],
+  ["重庆宗申机车工业制造有限公司", 190, 2018],
+  ["重庆建工集团股份有限公司", 212, 2018],
+  ["重庆大学", 243, 2018],
+  ["国网重庆市电力公司", 273, 2018],
+  ["国家电网有限公司", 398, 2018],
+  ["重庆宗申机车工业制造有限公司", 190, 2019],
+  ["重庆建工住宅建设有限公司", 251, 2019],
+  ["重庆大学", 257, 2019],
+  ["重庆建工集团股份有限公司", 288, 2019],
+  ["国网重庆市电力公司", 305, 2019],
+  ["国家电网有限公司", 438, 2019],
+  ["重庆宗申机车工业制造有限公司", 190, 2020],
+  ["重庆大学", 262, 2020],
+  ["重庆建工住宅建设有限公司", 303, 2020],
+  ["国网重庆市电力公司", 330, 2020],
+  ["重庆建工集团股份有限公司", 352, 2020],
+  ["国家电网有限公司", 466, 2020],
+  ["重庆宗申机车工业制造有限公司", 190, 2021],
+  ["重庆大学", 268, 2021],
+  ["重庆建工住宅建设有限公司", 330, 2021],
+  ["国网重庆市电力公司", 351, 2021],
+  ["重庆建工集团股份有限公司", 381, 2021],
+  ["国家电网有限公司", 488, 2021],
+  ["重庆大学", 276, 2022],
+  ["中国建筑第八工程局有限公司", 324, 2022],
+  ["重庆建工住宅建设有限公司", 376, 2022],
+  ["国网重庆市电力公司", 392, 2022],
+  ["重庆建工集团股份有限公司", 427, 2022],
+  ["国家电网有限公司", 529, 2022],
+  ["重庆大学", 277, 2023],
+  ["中国建筑第八工程局有限公司", 352, 2023],
+  ["重庆建工住宅建设有限公司", 395, 2023],
+  ["国网重庆市电力公司", 402, 2023],
+  ["重庆建工集团股份有限公司", 449, 2023],
+  ["国家电网有限公司", 540, 2023]
+]
+// 对timeData按照年份升序排列，如果年份相同则按数量降序排列
+timeData.sort(function (a, b) {
+  // 先按年份升序排列
+  if (a[2] < b[2]) {
+    return -1;
+  } else if (a[2] > b[2]) {
+    return 1;
+  } else {
+    // 年份相同的情况下，按数量降序排列
+    return b[1] - a[1];
+  }
+});
+const data = timeData;
+const years = [];
+console.log("timeData 变量的内容：");
+console.log(timeData);
+console.log("data 变量的内容：");
+console.log(data);
+console.log("years 变量的内容：");
+console.log(years);
+for (let i = 0; i < data.length; ++i) {
+    if (years.length === 0 || years[years.length - 1] !== data[i][2]) {
+      years.push(data[i][2]);
+    }
+  }
+let startIndex = 0;
+let startYear = years[startIndex];
+
+
+option = {
+  grid: {
+    top: 10,
+    bottom: 30,
+    left: 120,
+    right: 30
+  },
+    tooltip: {
+    show: true,
+    textStyle: {
+        color: '#fff',
+        fontSize: 16
+    },
+    extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+},
+  xAxis: {
+    max: 'dataMax',
+    axisLabel: {
+        fontSize: 8,
+    color: 'rgba(255,255,255,.7)',
+      formatter: function (n) {
+        return Math.round(n) + '';
+      }
+    }
+  },
+  dataset: {
+      source: data.slice(1).filter(function (d) {
+        return d[2] === startYear;
+      })
+    },
+  yAxis: {
+    type: 'category',
+    inverse: true,
+    max: 5,
+    axisLabel: {
+      show: true,
+      fontSize: 8,
+      color: 'rgba(255,255,255,.7)',
+      formatter: function (value) {
+        return value ;
+      }
+    },
+    animationDuration: 300,
+    animationDurationUpdate: 300
+  },
+  
+
+  series: [
+    {
+      realtimeSort: true,
+      seriesLayoutBy: 'column',
+      type: 'bar',
+      itemStyle: {
+          color: function (param) {
+            const colorArray = ["#3685fe", "#f5616f", "#50c48f", "#26ccd8", "#9977ef", "#f7b13f"];
+          return colorArray[param.dataIndex % colorArray.length];
+          }
+        },
+      name: '专利申请人',
+      encode: {
+        x: 1,
+        y: 0
+      },
+      label: {
+        show: true,
+        precision: 0,
+        position: 'right',
+        valueAnimation: true,
+        fontFamily: 'monospace',
+        animation: 'auto',
+        textStyle: {
+                    color: '#fff',
+                    fontSize: 12
+                },
+        
+      }
+    }
+  ],
+
+  // Disable init animation.
+  animationDuration: 2000,
+  animationDurationUpdate: updateFrequency,
+  animationEasing: 'linear',
+  animationEasingUpdate: 'linear',
+  graphic: {
+      elements: [
+        {
+          type: 'text',
+          right: 0,
+          bottom: 20,
+          style: {
+            text: startYear,
+            font: 'bolder 60px monospace',
+            fill: 'rgba(255, 255, 255, 0.35)'
+          },
+          z: 100
+        }
+      ]
+    },
+};
+for (let i = startIndex; i < years.length - 1; ++i) {
+  (function (i) {
+    setTimeout(function () {
+        updateYear(years[i + 1]);
+    },  (i - startIndex) *updateFrequency);
+  })(i);
+}
+
+function updateYear(year) {
+    let source = data.slice(1).filter(function (d) {
+    return d[2] === year;
+  });
+  option.series[0].data = source;
+  option.graphic.elements[0].style.text = year;
+  contentChart.setOption(option);
+}
+option && contentChart.setOption(option);
+setInterval(function() {
+    contentChart.clear()
+    contentChart.setOption(option)
+},30000)
+
+},
+
+
+
+
+//             // 关注内容区域占比
+//             contentFn:function() {
+//                 var timeData = [
+//   {
+//     time: '2014',
+//     data: [
+// {name: ' 隆鑫通用动力股份有限公司', value: 97},
+// {name: ' 重庆大学', value: 136},
+// {name: '重庆隆鑫机车有限公司', value: 139},
+// {name: '国网重庆市电力公司', value: 157},
+// {name: ' 重庆宗申机车工业制造有限公司', value: 190},
+// {name: '国家电网有限公司', value: 210},
+//     ],
+//   },
+//   {
+//     time: '2015',
+//     data: [
+//     {name: ' 隆鑫通用动力股份有限公司', value: 106},
+// {name: ' 重庆大学', value: 156},
+// {name: '重庆隆鑫机车有限公司', value: 162},
+// {name: '国网重庆市电力公司', value: 176},
+// {name: ' 重庆宗申机车工业制造有限公司', value: 190},
+// {name: '国家电网有限公司', value: 262},
+//     ],
+//   },
+//   {
+//     time: '2016',
+//     data: [
+//     {name: ' 隆鑫通用动力股份有限公司', value: 110},
+
+// {name: '重庆隆鑫机车有限公司', value: 168},
+// {name: ' 重庆大学', value: 175},
+// {name: ' 重庆宗申机车工业制造有限公司', value: 190},
+// {name: '国网重庆市电力公司', value: 204},
+// {name: '国家电网有限公司', value: 308},
+//     ],
+//   },
+//   {
+//     time: '2017',
+//     data: [
+//     {name: ' 重庆建工集团股份有限公司', value: 143},
+
+// {name: '重庆隆鑫机车有限公司', value: 169},
+
+// {name: ' 重庆宗申机车工业制造有限公司', value: 190},
+// {name: ' 重庆大学', value: 213},
+// {name: '国网重庆市电力公司', value: 237},
+// {name: '国家电网有限公司', value: 354},
+//     ],
+//   },
+//   {
+//     time: '2018',
+//     data: [
+//     {name: '重庆建工住宅建设有限公司', value: 187},
+
+// {name: '重庆宗申机车工业制造有限公司', value: 190},
+
+// {name: '重庆建工集团股份有限公司', value: 212},
+// {name: '重庆大学', value: 243},
+// {name: '国网重庆市电力公司', value: 273},
+// {name: '国家电网有限公司', value: 398},
+//     ],
+//   },
+//   {
+//     time: '2019',
+//     data: [
+//     {name: '重庆宗申机车工业制造有限公司', value: 190},
+
+// {name: '重庆建工住宅建设有限公司', value: 251},
+
+// {name: '重庆大学', value: 257},
+// {name: '重庆建工集团股份有限公司', value: 288},
+// {name: '国网重庆市电力公司', value: 305},
+// {name: '国家电网有限公司', value: 438},
+//     ],
+//   },
+//   {
+//     time: '2020',
+//     data: [
+//     {name: '重庆宗申机车工业制造有限公司', value: 190},
+// {name: '重庆大学', value: 262},
+// {name: '重庆建工住宅建设有限公司', value: 303},
+// {name: '国网重庆市电力公司', value: 330},
+// {name: '重庆建工集团股份有限公司', value: 352},
+// {name: '国家电网有限公司', value: 466},
+//     ],
+//   },
+//   {
+//     time: '2021',
+//     data: [
+//     {name: '重庆宗申机车工业制造有限公司', value: 190},
+// {name: '重庆大学', value: 268},
+// {name: '重庆建工住宅建设有限公司', value: 330},
+// {name: '国网重庆市电力公司', value: 351},
+// {name: '重庆建工集团股份有限公司', value: 381},
+// {name: '国家电网有限公司', value: 488},
+//     ],
+//   },
+//   {
+//     time: '2022',
+//     data: [
+
+// {name: '重庆大学', value: 276},
+// {name: '中国建筑第八工程局有限公司', value: 324},
+// {name: '重庆建工住宅建设有限公司', value: 376},
+// {name: '国网重庆市电力公司', value: 392},
+// {name: '重庆建工集团股份有限公司', value: 427},
+// {name: '国家电网有限公司', value: 529},
+//     ],
+//   },
+//   {
+//     time: '2023',
+//     data: [
+//     {name: '重庆大学', value: 277},
+// {name: '中国建筑第八工程局有限公司', value: 352},
+// {name: '重庆建工住宅建设有限公司', value: 395},
+// {name: '国网重庆市电力公司', value: 402},
+// {name: '重庆建工集团股份有限公司', value: 449},
+// {name: '国家电网有限公司', value: 540},
+//     ],
+//   },
+//   // 其他时间点的数据
+// ];
+
+// var contentChart = echarts.init(document.getElementById('contentId'));
+// var currentTimeIndex = 0;
+  
+// var option = {
+//   // 配置项，见下文
+// };
+// function updateChart() {
+//   // 获取当前时间点的数据
+//   var currentData = timeData[currentTimeIndex].data;
+
+//   // 更新 yAxis 数据
+//   var newYAxisData = currentData.map(item => item.name);
+
+//   // 更新 series 数据
+//   var newSeriesData = currentData.map(item => item.value);
+
+//   var option = {
+//                 grid: {
+//                     containLabel: true,
+//                     left: 30,
+//                     top: 10,
+//                     right: 15,
+//                     bottom: 10
+//                 },
+//                 tooltip: {
+//                     show: true,
+//                     textStyle: {
+//                         color: '#fff',
+//                         fontSize: 16
+//                     },
+//                     extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+//                 },
+//                 xAxis: {
+//                     type: 'value',
+//                     axisLabel: {
+//                         fontSize: 8,
+//                         color: 'rgba(255,255,255,.7)'
+//                     },
+//                     axisLine: {
+//                         show: false
+//                     },
+//                     axisTick: {
+//                         show: false
+//                     }
+//                 },
+//                 yAxis: {
+//                     type: 'category',
+//                     data: newYAxisData,
+//                     axisLabel: {
+//                         fontSize: 8,
+//                         color: 'rgba(255,255,255,.7)'
+//                     },
+//                     axisLine: {
+//                         show: false
+//                     },
+//                     axisTick: {
+//                         show: false
+//                     }
+//                 },
+//                 series: [
+//                     {
+//                         type: 'bar',
+//                         name: '专利申请人',
+//                         label: {
+//                             show: true,
+//                             position: 'right',
+//                             formatter: '{c}',
+//                             textStyle: {
+//                                 color: '#fff',
+//                                 fontSize: 8
+//                             }
+//                         },
+//                         itemStyle: {
+//                             normal: {
+//                                 color: '#0EFCFF'
+//                             },
+//                             emphasis: {
+//                                 color: '#f5616f'
+//                             }
+//                         },
+//                         data: newSeriesData
+//                     }
+//                 ]
+//             };
+
+//             contentChart.setOption(option);
+
+//             currentTimeIndex = (currentTimeIndex + 1) % timeData.length;
+//         }
+
+//         // 设置定时器，每隔一秒更新图表
+//         setInterval(updateChart, 1000);
+
+//         // 初始化图表
+//         updateChart();},
+
+
+
+        
+            // contentFn:function() {
+            //     var resArr = [
+            //     {name: ' 重庆大学', value: 277},
+            //     {name: '中国建筑第八工程局有限公司', value: 347},
+            //         {name: '重庆建工住宅建设有限公司', value: 395},
+            //         {name: '国网重庆市电力公司', value: 402},
+            //         {name: '重庆建工集团股份有限公司', value: 448},
+            //         {name: '国家电网有限公司', value: 540},
+            //     ]
+            //     // 创建一个 ECharts 实例
+            //     var contentChart = echarts.init(document.getElementById('contentId'));
+            //     var option = {
+            //         grid: {
+            //             containLabel: true,
+            //             left: 30, // 调整左边距以适应标签显示
+            //             top: 10,
+            //             right: 15,
+            //             bottom: 10
+            //         },
+            //         tooltip: {
+            //             show: true,
+            //             // backgroundColor: '#fff',
+            //             // borderColor: '#ddd',
+            //             // borderWidth: 1,
+            //             textStyle: {
+            //                 color: '#fff',
+            //                 fontSize: 16
+            //             },
+            //             extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
+            //         },
+            //         xAxis: {
+            //             type: 'value',
+            //             axisLabel: {
+            //                 fontSize: 8,
+            //                 color: 'rgba(255,255,255,.7)'
+            //             },
+            //             axisLine: {
+            //                 show: false
+            //             },
+            //             axisTick: {
+            //                 show: false
+            //             }
+            //         },
+            //         yAxis: {
+            //             type: 'category',
+            //             data: resArr.map(item => item.name),
+            //             axisLabel: { // 明确设置 Y 轴标签样式
+            //                 fontSize: 8,
+            //                 color: 'rgba(255,255,255,.7)'
+            //             },
+            //             axisLine: {
+            //                 show: false
+            //             },
+            //             axisTick: {
+            //                 show: false
+            //             }
+            //         },
+            //         series: [
+            //             {
+            //                 type: 'bar',
+            //                 name: '专利申请人',
+            //                 label: {
+            //                     show: true,
+            //                     position: 'right', // 标签显示在右侧
+            //                     formatter: '{c}',
+            //                     textStyle: {
+            //                         color: '#fff',
+            //                         fontSize: 8
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: {
+            //                         color: '#0EFCFF'
+            //                     },
+            //                     emphasis: {
+            //                         color: '#f5616f'
+            //                     }
+            //                 },
+            //                 data: resArr.map(item => item.value)
+            //             }
+            //         ]
+            //     };
                
-                contentChart.setOption(option)
-                setInterval(function() {
-                    contentChart.clear()
-                    contentChart.setOption(option)
-                },90000)
-            },
+            //     contentChart.setOption(option)
+            //     setInterval(function() {
+            //         contentChart.clear()
+            //         contentChart.setOption(option)
+            //     },90000)
+            // },
             // 巡察
             publicNumFn:function() {
                 var resArr = [
@@ -1370,6 +2064,7 @@ mvp.setAttribute('content','width=480');
 
 
                 var option = {
+                    animationDuration: 5000,
                     grid: {
                         containLabel: true,
                         left: 10,
@@ -1379,11 +2074,9 @@ mvp.setAttribute('content','width=480');
                     },
                     tooltip: {
                         trigger: 'axis',
-                        backgroundColor: '#fff',
-                        borderColor: '#ddd',
-                        borderWidth: 1,
+                    order: 'valueDesc',
                         textStyle: {
-                            color: '#3c3c3c',
+                            color: '#fff',
                             fontSize: 16
                         },
                         extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)'
@@ -1491,7 +2184,7 @@ mvp.setAttribute('content','width=480');
                 setInterval(function() {
                     publicNumChart.clear()
                     publicNumChart.setOption(option)
-                },60000)
+                },30000)
             }
 
         }
