@@ -139,10 +139,16 @@ body,
 html,
 .main {
     width : 100%;
-    height: 49vw;
+    height: 100%;
     font-size: 12px;
 }
-
+@media screen and (max-width: 768px) {
+    .main {
+        width: 100%; /* 在手机端使元素自适应宽度 */
+        height: 49vw;
+        font-size: 8px; /* 在手机端减小字体大小 */
+    }
+}
 .main {
     position       : relative;
     background-repeat: no-repeat;
