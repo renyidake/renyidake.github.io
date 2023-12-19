@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
+    <!-- 浏览器每60秒刷新页面。但它缺少url属性，所以会在当前页面刷新， -->
+    <title>专利数据监控</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入css样式文件 -->
+
+
+</head>
+<body>
+<!-- 页面主体部分 -->
+<div class="content-body"> 
+    <!-- 容器content-body -->
+    <div class="header">
+        <div class="header-left">
+            <span>专利数据监控</span>
+        </div>
+        <div class="header-time">
+            <span id="time"></span>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- 区块content -->
+        <div class="content-con">
+            <!-- 容器content-con -->
+            <div class="left-body">
+                <!-- 区域左侧内容 -->
+                <div class="left-top public-bg">
+                    <!-- 左侧顶部内容 -->
+                    <div class="public-title">专利类型</div>
+                    <!-- 上部容器 -->
+                    <div class="top-body">
+                        <!-- 上部左侧 -->
+                        <div class="top-left">
+                            <div class="top-left-title">
+                                <!-- 内容 -->
+                                <h6>发明申请</h6>
+                                <span><b>1756</b></span>
+                                <img src="image/pictre.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="top-center">
+                            <div class="top-left-title">
+                                <h6>实用新型</h6>
+                                <span><b>11480</b></span>
+                                <img src="image/pictre.png" alt="">
+                            </div>
+                        </div>
+                        <!-- 上部右侧 -->
+                        <div class="top-right">
+                            <div class="top-left-title">
+                                <h6>外观设计</h6>
+                                <span><b>3520</b></span>
+                                <img src="image/pictre.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+                <div class="left-con public-bg">
+                    <!-- 左侧中部 -->
+                    <div class="public-title">专利质量对比</div>
+                    <div class="title-nav" id="leida"></div>
+                    <!-- 空容器站位 -->
+                </div>
+                <div class="left-bottom public-bg">
+                    <!-- 左侧底部内容 -->
+                    <div class="public-title">专利申请排名</div>
+                    <!-- 空容器站位 -->
+                    <div class="title-nav" id="wuran"></div>
+                </div>
+            </div>
+
+            <div class="center-body">
+                <!-- 中部容器 map地图 -->
+                <div class="map" id="map"></div>
+            </div>
+
+            <div class="right-body">
+                <!-- 右侧容器 -->
+                <div class="right-top public-bg">
+                    <!-- 右侧上部 -->
+                    <div class="public-title">专利运营情况</div>
+                    <div class="title-nav">
+                        <div class="top5-ul">
+                            <!-- 排列水质排名信息的列表 -->
+                            <ul>
+                                <li class="title-row">
+                                    <span>排名 </span>
+                                    <span>主体</span>
+                                    <span>转移</span>
+                                    <span>质押</span>
+                                    <span>许可</span>
+                                   
+                                </li>
+                                <li>
+                                    <span>第一</span>
+                                    <span>国家电网</span>
+                                    <span>58</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    
+                                </li>
+                                <li>
+                                    <span>第二</span>
+                                    <span>海川实业</span>
+                                    <span>0</span>
+                                    <span>33</span>
+                                    <span>0</span>
+                                   
+                                </li>
+                                <li>
+                                    <span>第三</span>
+                                    <span>越新材料</span>
+                                    <span>30</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                   
+                                </li>
+                                <li>
+                                    <span>第四</span>
+                                    <span>垚美软瓷</span>
+                                    <span>27</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                  
+                                </li>
+                                <li>
+                                    <span>第五</span>
+                                    <span>隆鑫机车</span>
+                                    <span>13</span>
+                                    <span>0</span>
+                                    <span>18</span>
+                                   
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-con public-bg">
+                    <!-- 右侧中部 -->
+                    <div class="public-title">专利状态构成</div>
+                    <!-- 空容器占位 -->
+                    <div class="title-nav" id="huaxing"></div>
+                </div>
+                <div class="right-bottom public-bg">
+                    <!-- 右侧下部 -->
+                    <div class="public-title">专利申请趋势</div>
+                    <div class="title-nav" id="zhexian"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- 引入JS库 -->
+<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script>
+    //顶部时间
+    function getTime(){
+        var myDate = new Date();
+        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+        var myToday = myDate.getDate(); //获取当前日(1-31)
+        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        var myHour = myDate.getHours(); //获取当前小时数(0-23)
+        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+        var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var nowTime;
+
+        nowTime = myYear+'年'+fillZero(myMonth)+'月'+fillZero(myToday)+'日'+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;';
+        //显示时间
+        $('#time').html(nowTime);
+    };
+    //数字前补0
+    function fillZero(str){
+        var realNum;
+        if(str<10){
+            realNum	= '0'+str;
+        }else{
+            realNum	= str;
+        }
+        return realNum;
+    }
+    //大屏
+    setInterval(getTime,1000);
+</script>
