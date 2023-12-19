@@ -155,7 +155,7 @@ mvp.setAttribute('content','width=480');
                     <div class="main_top_middle_bottom_echarts main_top_middle_bottom_echarts_right">
                         <img src="./images/main_top_bottom.png">
                         <div class="main_top_echarts_con">
-                            <div class="main_top_echarts_con_title">专利法律状态构成</div>
+                            <div class="main_top_echarts_con_title">战略新兴产业构成</div>
                             <div id="publicityId" class="main_top_echarts_pie"></div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ mvp.setAttribute('content','width=480');
                     <!-- 图标 -->
                     <img src="./images/main_top_left.png"/>
                     <!-- 标题 -->
-                    <div class="main_top_left_top_title">战略新兴产业构成</div>
+                    <div class="main_top_left_top_title">专利法律状态构成</div>
                     <!-- 数据展示容器 -->
                     <div id="questionId" class="main_top_left_top_con">
                     </div>
@@ -439,7 +439,7 @@ mvp.setAttribute('content','width=480');
                     <!-- 图标 -->
                     <img src="./images/main_bottopm_top2.png">
                     <!-- 标题 -->
-                    <div class="main_bottom_t_l_title">申请人类型构成</div>
+                    <div class="main_bottom_t_l_title">申请人荣誉资质构成</div>
                     <!-- 饼状图容器 -->
                     <div id="departmentId" class="main_bottom_t_l_chart"></div>
                 </div>
@@ -448,7 +448,7 @@ mvp.setAttribute('content','width=480');
                     <!-- 图标 -->
                     <img src="./images/main_bottopm_top1.png">
                     <!-- 标题 -->
-                    <div class="main_bottom_t_l_title">功能工具</div>
+                    <div class="main_bottom_t_l_title">自研工具</div>
                     <!-- 内容 -->
                     <div class="main_bottom_t_l_con" style="top: -15px">
                          <!-- 列表内容 -->
@@ -512,9 +512,76 @@ mvp.setAttribute('content','width=480');
                     <!-- 图标 -->
                     <img src="./images/main_bottom_bottom.png">
                     <!-- 标题 -->
-                    <div class="main_bottom_b_title">专利技术分布</div>
-                    <!-- 内容 -->
-                    <div id="coverageId" class="main_bottom_b_con"></div>
+                    <div class="main_bottom_b_title">专利运营情况</div>
+
+                    <!-- 内容
+                    <div id="coverageId" class="main_bottom_b_con"></div> -->
+
+<!-- 专利运营情况 代码截取 -->
+                    <div class="title-nav">
+                        <div class="top5-ul">
+                            <!-- 排列水质排名信息的列表 -->
+                            <ul>
+                                <li class="title-row">
+                                  
+                                    <span>主体</span>
+                                    <span>转移</span>
+                                    <span>质押</span>
+                                    <span>许可</span>
+                                   
+                                </li>
+                                <li>
+                                  
+                                    <span>国家电网</span>
+                                    <span>58</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                    
+                                </li>
+                                <li>
+                                    
+                                    <span>海川实业</span>
+                                    <span>0</span>
+                                    <span>33</span>
+                                    <span>0</span>
+                                   
+                                </li>
+                                <li>
+                                  
+                                    <span>越新材料</span>
+                                    <span>30</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                   
+                                </li>
+                                <li>
+                                  
+                                    <span>垚美软瓷</span>
+                                    <span>27</span>
+                                    <span>0</span>
+                                    <span>0</span>
+                                  
+                                </li>
+                                <li>
+                                  
+                                    <span>隆鑫机车</span>
+                                    <span>13</span>
+                                    <span>0</span>
+                                    <span>18</span>
+                                   
+                                </li>
+                                <li>
+                                  
+                                    <span>城东再生资源</span>
+                                    <span>0</span>
+                                    <span>25</span>
+                                    <span>0</span>
+                                   
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
                 <!-- 中间左侧内容 -->
                 <div class="main_bottom_b_middle1">
@@ -620,7 +687,7 @@ mvp.setAttribute('content','width=480');
                 this.departmentFn()
                 this.guideFn()
                 this.policyFn()
-                this.coverageFn()
+                // this.coverageFn()
                 this.yearsNumFn()
                 this.contentFn()
                 this.publicNumFn()
@@ -817,7 +884,7 @@ mvp.setAttribute('content','width=480');
                 //     numArr.push({name: data.list[i].name,value: data.list[i].num})
                 // }
                 var datas = numArr // 使用数据
-                var questionChart = echarts.init(document.getElementById('questionId')); // 使用 echarts 初始化图表 空间id
+                var questionChart = echarts.init(document.getElementById('publicityId')); // 使用 echarts 初始化图表 空间id questionId
                 var option = { // 图表的配置选项
                     title: {
                         left: 'center'
@@ -830,24 +897,24 @@ mvp.setAttribute('content','width=480');
  "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
  "#0780cf", "#765005"],
                     legend: {
-                        itemWidth: 11,// 标志图形的长度
-                        itemHeight: 11,// 标志图形的宽度
+                        itemWidth: 16,// 标志图形的长度
+                        itemHeight: 16,// 标志图形的宽度
                         orient: 'vertical',
                         // left: 'right',
-                        top: '15%',
-                        x: '50%',
+                        top: '5%',
+                        x: '60%',
                         data: datas,
                         textStyle: { //图例文字的样式
                             color: '#fff',
-                            fontSize: 8
+                            fontSize: 12
                         },
                     },
                     series: [
                         {
                             name: '战略新兴产业',
                             type: 'pie',
-                            radius: '75%',
-                            center: ['20%', '50%'],
+                            radius: '95%',
+                            center: ['40%', '50%'],
                             animationDuration: 2500,
                             data: datas,
                             label: {
@@ -881,7 +948,7 @@ mvp.setAttribute('content','width=480');
                 //     dataArr.push({name: res.list[i].name, value: res.list[i].num})
                 // }
 
-                var publicitChart = echarts.init(document.getElementById('publicityId')); //空间id
+                var publicitChart = echarts.init(document.getElementById('questionId')); //空间id
                 var data = dataArr
                 var option = {
                 // 图表的配置选项
@@ -893,16 +960,16 @@ mvp.setAttribute('content','width=480');
                         formatter: '{a} <br/>{b} : {c} ({d}%)'
                     },
                     legend: {
-                        itemWidth: 12,// 标志图形的长度
-                        itemHeight: 12,// 标志图形的宽度
+                        itemWidth: 16,// 标志图形的长度
+                        itemHeight: 16,// 标志图形的宽度
                         orient: 'vertical',
                         // left: 'right',
                         top: '5%',
                         bottom: '50%',
-                        x: '45%',
+                        x: '60%',
                         textStyle: {
                             color: '#fff',
-                            fontSize: 8,
+                            fontSize: 12,
 
                         },
                         data: data,
@@ -996,8 +1063,8 @@ mvp.setAttribute('content','width=480');
                     },
                     legend: {
                         // show:false,
-                        itemWidth: 15,// 标志图形的长度
-                        itemHeight: 15,// 标志图形的宽度
+                        itemWidth: 16,// 标志图形的长度
+                        itemHeight: 16,// 标志图形的宽度
                         orient: 'vertical',
                         // left: 'right',
                         top: '10%',
@@ -1005,7 +1072,7 @@ mvp.setAttribute('content','width=480');
                         x: '50%',
                         textStyle: {
                             color: '#fff',
-                            fontSize: 8,
+                            fontSize: 12,
 
                         },
                         data: data
@@ -1052,13 +1119,21 @@ mvp.setAttribute('content','width=480');
                     {name: '医院', value: 280},
                     {name: '其他', value: 75},
                 ]
+                var dataArr1 = [ // 各事务所专利数据 顺序为 扇区分布顺序
+                    
+
+                    {name: '高新技术企业', value: 7781},
+                    {name: '专精特新企业', value: 3816},
+                    {name: '小巨人企业', value: 267},
+              
+                ]
                     // 中间滚动数据展示
                     for(var j = 0; j < dataArr.length; j++) {
                         $(".main_list_title_num"+(j+1)).addClass("counter-value").text(dataArr[j].value)
                         $(".main_list_title"+(j+1)).text(dataArr[j].name)
                     }
                 var departmentChart = echarts.init(document.getElementById('departmentId'));
-                var data = dataArr
+                var data = dataArr1
                 var option = { // 图表的配置选项
                     color: ["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
  "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
@@ -1068,8 +1143,8 @@ mvp.setAttribute('content','width=480');
                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                     },
                     legend: {
-                        itemWidth: 15,// 标志图形的长度
-                        itemHeight: 15,// 标志图形的宽度
+                        itemWidth: 16,// 标志图形的长度
+                        itemHeight: 16,// 标志图形的宽度
                         orient: 'vertical',
                         // left: 'right',
                         top: '30%',
@@ -1077,7 +1152,7 @@ mvp.setAttribute('content','width=480');
                         x: '5%',
                         textStyle: {
                             color: '#fff',
-                            fontSize: 8,
+                            fontSize: 12,
 
                         },
                         data: data,
@@ -1087,7 +1162,7 @@ mvp.setAttribute('content','width=480');
                             name: '申请人类型',
                             type: 'pie',
                             radius: ['50%', '70%'],
-                            center: ['78%', '52%'],
+                            center: ['73%', '52%'],
                             avoidLabelOverlap: true,
                             labelLine: {
                                 normal: {
@@ -1108,7 +1183,7 @@ mvp.setAttribute('content','width=480');
                                     borderRadius: 4,
                                     padding: [0,0],
                                     height: 20,
-                                    fontSize: 8,
+                                    fontSize: 12,
                                     align: 'center',
                                     color: '#0EFCFF',
                                 }
@@ -1119,7 +1194,7 @@ mvp.setAttribute('content','width=480');
                             color: '#0EFCFF',
                             type: 'pie',
                             radius: ['55', '56'],
-                            center: ['78%', '52%'],
+                            center: ['73%', '52%'],
                             data: [100],
                             label: {
                                 show: false
@@ -1128,7 +1203,7 @@ mvp.setAttribute('content','width=480');
                         {
                             type: 'pie',
                             radius: ['25', '26'],
-                            center: ['78%', '52%'],
+                            center: ['73%', '52%'],
                             data: [100],
                             label: {
                                 show: false
@@ -1163,257 +1238,161 @@ mvp.setAttribute('content','width=480');
                     speed: 500
                 });
             },
-            // // 专利质量雷达图
-            // coverageFn:function() {
-            //     var resArr = [ // 一组主要关注内容区域占比数据
-            //         {name: '作业', value: 14634},
-            //         {name: '机械工程', value: 3551},
-            //         {name: '物理', value:3235},
-            //         {name: '人类生活必需', value: 3231},
-            //         {name: '固定建筑物', value: 2793},
-            //         {name: '电学', value: 2513},
-            //         {name: '化学', value: 1709},
-            //         {name: '纺织', value: 835},
-            //     ]
-            //     var indicatorArr = []
-            //     var numArr = []
-            //     for(var i = 0; i < resArr.length; i++) {
-            //         indicatorArr.push({name: resArr[i].name,max: 15000}) // 雷达图的每个维度设置
-            //         numArr.push(resArr[i].value)
-            //     }
-            //     var data = [
-            //         {
-            //             value: numArr,
-            //         }
-            //     ]
-            //     var coverageChart = echarts.init(document.getElementById('coverageId'));
-            //     var option = { // 图表的配置选项
-            //         legend: {
-            //             show: true,
-            //             icon: "circle",
-            //             bottom: 30,
-            //             center: 0,
-            //             itemWidth: 14,
-            //             itemHeight: 14,
-            //             itemGap: 21,
-            //             orient: "horizontal",
-            //             data: ['a', 'b'],
-            //             textStyle: {
-            //                 fontSize: '70%',
-            //                 color: '#0EFCFF'
-            //             },
-            //         },
-
-            //         radar: {
-            //             // shape: 'circle',
-            //             radius: '70%',
-            //             triggerEvent: true,
-            //             // type: 'default',
-            //             name: {
-            //                 textStyle: {
-            //                     color: '#39DCF4',
-            //                     fontSize: '10',
-            //                     // borderRadius: 3,
-            //                     padding: [10, 10]
-            //                 }
-            //             },
-            //             nameGap: '2',
-            //             indicator: indicatorArr,
-            //             splitArea: {
-            //                 areaStyle: {
-            //                     color: 'rgba(255,255,255,0)'
-            //                 }
-            //             },
-            //             axisLine: { //指向外圈文本的分隔线样式
-            //                 lineStyle: {
-            //                     color: 'rgba(255,255,255,.2)'
-            //                 }
-            //             },
-            //             splitLine: {
-            //                 lineStyle: {
-            //                     width: 1,
-            //                     color: 'rgba(255,255,255,.2)'
-            //                 }
-            //             },
-
-            //         },
-            //         series: [{
-            //             name: '重庆专利质量',
-            //             type: 'radar',
-            //             animationDuration: 2000,
-            //             areaStyle: {
-            //                 normal: {
-            //                     color: {
-            //                         type: 'linear',
-            //                         opacity: 1,
-            //                         x: 0,
-            //                         y: 0,
-            //                         x2: 0,
-            //                         y2: 1,
-            //                         color: '#2EEFAD'
-            //                     }
-            //                 }
-            //             },
-            //             symbolSize: 0,
-            //             lineStyle: {
-            //                 normal: {
-            //                     // color: 'rgba(252,211,3, 1)',
-            //                     width: 0
-            //                 }
-            //             },
-            //             data: data
-            //         }]
-            //     };
-
-            //     coverageChart.setOption(option) // 设置图表的选项
-            coverageFn: function () {
-                var treemapData = {
-    name: 'IPC部分布', // 根节点名称（可自定义）
-    children: [
-        {
-            name: '作业',
-            children: [ 
-                { name: '输送；包装；贮存；搬运薄的或细丝状材料', value: 2606},
-                { name: '一般的物理或化学的方法或装置', value: 1740 },
-                { name: ' 机床；其他类目中不包括的金属加工', value: 1679 },
-                { name: '基本上无切削的金属机械加工；金属冲压', value: 912},
-                { name: '无轨陆用车辆 B62B手动车辆，例如手推车或摇篮车；雪橇', value: 870},
-                { name: ' 塑料的加工；一般处于塑性状态物质的加工', value: 758},
-            ],
-        },
-        {
-            name: '机械工程',
-            children: [
-                { name: '工程元件或部件；为产生和保持机器或设备的有效运行的一般措施', value: 1101 },
-                { name: '供热；炉灶；通风', value: 553 },
-                { name: '干燥', value: 381 },
-                { name: '照明', value: 246},
-                { name: '液体变容式机械；液体泵或弹性流体泵', value: 240 },
-                { name: '燃烧发动机；热气或燃烧生成物的发动机装置', value: 207},
-            ],
-        },
-        {
-            name: '物理',
-            children: [
-            { name: '测量；测试', value: 2192},
-                { name: '计算；推算或计数', value: 441 },
-                { name: '教育；密码术；显示；广告；印鉴', value: 187 },
-                { name: '光学', value: 153 },
-                { name: '控制；调节', value: 137 },
-                { name: '信号装置', value: 119},
-            ],
-        },
-        {
-            name: '人类生活必需',
-            children: [
-            { name: '家具；家庭用的物品或设备；咖啡磨；香料磨；一般吸尘器', value: 828 },
-                { name: '医学或兽医学；卫生学', value: 787},
-                { name: '农业；林业；畜牧业；狩猎；诱捕；捕鱼', value: 725},
-                { name: '其他类不包含的食品或食料；及其处理', value: 397 },
-                { name: '服装', value: 117 },
-                { name: '手携物品或旅行品', value: 100 },
-            ],
-        },
-        {
-            name: '固定建筑物',
-            children: [
-            { name: '建筑物', value: 1373},
-                { name: '道路、铁路或桥梁的建筑', value: 428},
-                { name: '水利工程；基础；疏浚', value: 425},
-                { name: '土层或岩石的钻进；采矿', value: 252},
-                { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 189 },
-                { name: '给水；排水', value: 160},
-            ],
-        },
-        {
-            name: '电学',
-            children: [
-            { name: '发电、变电或配电', value: 1017},
-                { name: '电气元件', value: 857},
-                { name: '电通信技术', value: 385},
-                { name: '其他类目不包含的电技术', value: 229 },
-            ],
-        },
-        {
-            name: '化学',
-            children: [
-            { name: '水、废水、污水或污泥的处理525', value: 525},
-                { name: '生物化学；啤酒；烈性酒；果汁酒；', value: 150},
-                { name: '水泥；混凝土；人造石；陶瓷；耐火材料', value: 134},
-                { name: '有机高分子化合物；其制备或化学加工', value: 119 },
-                { name: '有机化学', value: 111},
-                { name: '铁的冶金', value: 101 },
-            ],
-        },
-        {
-            name: '纺织',
-            children: [
-            { name: '纺织品和造纸', value: 846},
-                { name: '气候可持续性', value: 58},
-                { name: '制造工具', value: 55},
-                { name: '化学仪器和方法', value: 46 },
-                { name: '家里用具', value: 37 },
-                { name: '运输和包装', value: 10 },
-            ],
-        },
-
-    ],
-};
+    
+           
 
 
-    var coverageChart = echarts.init(document.getElementById('coverageId'));
-    var option = {
-        series: [
-            {
-                name:'专利技术分布',
-                type: 'treemap',
-                data: [treemapData], //图表的数据
-                color:["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
- "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
- "#0780cf", "#765005"],
-                breadcrumb: {
-                    show: true,
-                },
-                levels: [ //图表的层级样式
-                    {
-                        itemStyle: {
-                            borderWidth: 0,
-                            gapWidth: 5,
-                            borderColor: '#fff',
-                        },
-                    },
-                ],
-                leafDepth: 2, // 显示的层级深度
-                label: { //配置标签显示
-                    show: true,
-                    position: 'inside',
-                    formatter: '{b}',
-                    fontSize: 10,
-                },
-                emphasis: { //标签的高亮样式
-                    label: {
-                        fontSize: 14,
-                    },
-                },
+//             // IPC技术构成
+//             coverageFn: function () {
+//                 var treemapData = {
+//     name: 'IPC部分布', // 根节点名称（可自定义）
+//     children: [
+//         {
+//             name: '作业',
+//             children: [ 
+//                 { name: '输送；包装；贮存；搬运薄的或细丝状材料', value: 2606},
+//                 { name: '一般的物理或化学的方法或装置', value: 1740 },
+//                 { name: ' 机床；其他类目中不包括的金属加工', value: 1679 },
+//                 { name: '基本上无切削的金属机械加工；金属冲压', value: 912},
+//                 { name: '无轨陆用车辆 B62B手动车辆，例如手推车或摇篮车；雪橇', value: 870},
+//                 { name: ' 塑料的加工；一般处于塑性状态物质的加工', value: 758},
+//             ],
+//         },
+//         {
+//             name: '机械工程',
+//             children: [
+//                 { name: '工程元件或部件；为产生和保持机器或设备的有效运行的一般措施', value: 1101 },
+//                 { name: '供热；炉灶；通风', value: 553 },
+//                 { name: '干燥', value: 381 },
+//                 { name: '照明', value: 246},
+//                 { name: '液体变容式机械；液体泵或弹性流体泵', value: 240 },
+//                 { name: '燃烧发动机；热气或燃烧生成物的发动机装置', value: 207},
+//             ],
+//         },
+//         {
+//             name: '物理',
+//             children: [
+//             { name: '测量；测试', value: 2192},
+//                 { name: '计算；推算或计数', value: 441 },
+//                 { name: '教育；密码术；显示；广告；印鉴', value: 187 },
+//                 { name: '光学', value: 153 },
+//                 { name: '控制；调节', value: 137 },
+//                 { name: '信号装置', value: 119},
+//             ],
+//         },
+//         {
+//             name: '人类生活必需',
+//             children: [
+//             { name: '家具；家庭用的物品或设备；咖啡磨；香料磨；一般吸尘器', value: 828 },
+//                 { name: '医学或兽医学；卫生学', value: 787},
+//                 { name: '农业；林业；畜牧业；狩猎；诱捕；捕鱼', value: 725},
+//                 { name: '其他类不包含的食品或食料；及其处理', value: 397 },
+//                 { name: '服装', value: 117 },
+//                 { name: '手携物品或旅行品', value: 100 },
+//             ],
+//         },
+//         {
+//             name: '固定建筑物',
+//             children: [
+//             { name: '建筑物', value: 1373},
+//                 { name: '道路、铁路或桥梁的建筑', value: 428},
+//                 { name: '水利工程；基础；疏浚', value: 425},
+//                 { name: '土层或岩石的钻进；采矿', value: 252},
+//                 { name: '一般门、窗、百叶窗或卷辊遮帘；梯子', value: 189 },
+//                 { name: '给水；排水', value: 160},
+//             ],
+//         },
+//         {
+//             name: '电学',
+//             children: [
+//             { name: '发电、变电或配电', value: 1017},
+//                 { name: '电气元件', value: 857},
+//                 { name: '电通信技术', value: 385},
+//                 { name: '其他类目不包含的电技术', value: 229 },
+//             ],
+//         },
+//         {
+//             name: '化学',
+//             children: [
+//             { name: '水、废水、污水或污泥的处理525', value: 525},
+//                 { name: '生物化学；啤酒；烈性酒；果汁酒；', value: 150},
+//                 { name: '水泥；混凝土；人造石；陶瓷；耐火材料', value: 134},
+//                 { name: '有机高分子化合物；其制备或化学加工', value: 119 },
+//                 { name: '有机化学', value: 111},
+//                 { name: '铁的冶金', value: 101 },
+//             ],
+//         },
+//         {
+//             name: '纺织',
+//             children: [
+//             { name: '纺织品和造纸', value: 846},
+//                 { name: '气候可持续性', value: 58},
+//                 { name: '制造工具', value: 55},
+//                 { name: '化学仪器和方法', value: 46 },
+//                 { name: '家里用具', value: 37 },
+//                 { name: '运输和包装', value: 10 },
+//             ],
+//         },
+
+//     ],
+// };
+
+
+//     var coverageChart = echarts.init(document.getElementById('coverageId'));
+//     var option = {
+//         series: [
+//             {
+//                 name:'专利技术分布',
+//                 type: 'treemap',
+//                 data: [treemapData], //图表的数据
+//                 color:["#3685fe", "#f5616f","#50c48f",  "#26ccd8", "#9977ef",
+//  "#f7b13f", "#f9e264", "#f47a75", "#009db2", "#024b51",
+//  "#0780cf", "#765005"],
+//                 breadcrumb: {
+//                     show: true,
+//                 },
+//                 levels: [ //图表的层级样式
+//                     {
+//                         itemStyle: {
+//                             borderWidth: 0,
+//                             gapWidth: 5,
+//                             borderColor: '#fff',
+//                         },
+//                     },
+//                 ],
+//                 leafDepth: 2, // 显示的层级深度
+//                 label: { //配置标签显示
+//                     show: true,
+//                     position: 'inside',
+//                     formatter: '{b}',
+//                     fontSize: 10,
+//                 },
+//                 emphasis: { //标签的高亮样式
+//                     label: {
+//                         fontSize: 14,
+//                     },
+//                 },
                 
                 
-            },
-        ],
-        tooltip: {
-                show: true, // 显示tooltip
-                textStyle: {
-        color: '#fff',
-        fontSize: 16
-    },
-                // formatter: function(params) {
-                //     // 在tooltip中显示名称和值
-                //     return params.data.name + ': ' + params.data.value;
-                // },
-            },
-    };
-    coverageChart.setOption(option);
-            },
+//             },
+//         ],
+//         tooltip: {
+//                 show: true, // 显示tooltip
+//                 textStyle: {
+//         color: '#fff',
+//         fontSize: 16
+//     },
+//                 // formatter: function(params) {
+//                 //     // 在tooltip中显示名称和值
+//                 //     return params.data.name + ': ' + params.data.value;
+//                 // },
+//             },
+//     };
+//     coverageChart.setOption(option);
+//             },
 
+
+            // 极坐标柱状图
             yearsNumFn: function () {
     var resArr = [
         { name: '运输和包装', value: 5956 },
@@ -2140,12 +2119,6 @@ setInterval(function() {
             // 巡察
             publicNumFn:function() {
                 var resArr = [
-                    {name: '2007年', value: 108},
-                    {name: '2008年', value: 294},
-                    {name: '2009年', value: 330},
-                    {name: '2010年', value: 272},
-                    {name: '2011年', value: 595},
-                    {name: '2012年', value: 240},
                     {name: '2013年', value: 253},
                     {name: '2014年', value: 509},
                     {name: '2015年', value: 2197},
@@ -2159,12 +2132,6 @@ setInterval(function() {
                     {name: '2023年', value: 2051},
                 ]
                 var resArr1 = [
-                    {name: '2007年', value: 0},
-                    {name: '2008年', value: 81},
-                    {name: '2009年', value: 257},
-                    {name: '2010年', value: 309},
-                    {name: '2011年', value: 365},
-                    {name: '2012年', value: 401},
                     {name: '2013年', value: 217},
                     {name: '2014年', value: 256},
                     {name: '2015年', value: 594},
@@ -2178,12 +2145,6 @@ setInterval(function() {
                     {name: '2023年', value: 3989},
                 ]
                 var resArr2 = [
-                    {name: '2007年', value: 0},
-                    {name: '2008年', value: 102},
-                    {name: '2009年', value: 306},
-                    {name: '2010年', value: 350},
-                    {name: '2011年', value: 401},
-                    {name: '2012年', value: 421},
                     {name: '2013年', value: 321},
                     {name: '2014年', value: 271},
                     {name: '2015年', value: 735},
